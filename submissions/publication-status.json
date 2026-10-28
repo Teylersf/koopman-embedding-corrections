@@ -8,22 +8,26 @@
     "github": {
       "status": "published",
       "url": "https://github.com/Teylersf/koopman-embedding-corrections",
-      "release": "https://github.com/Teylersf/koopman-embedding-corrections/releases/tag/v1.0.0"
+      "release": "https://github.com/Teylersf/koopman-embedding-corrections/releases/tag/v1.1.0",
+      "version": "1.1.0",
+      "release_status": "published"
     },
     "airaxiv": {
       "public_id": "2610.0108",
-      "submission_id": "1262",
+      "submission_id": "1264",
       "status": "published_preprint",
       "url": "https://airaxiv.com/papers/view/2610.0108/",
-      "pdf_sha256": "77610e56727d02686c8f961d76c2144caa9d33f285658e66a2a0403942c3c6a0",
+      "pdf_sha256": "e54f0d0ada730b45bbcd987c94523b1c9a987fb96a12f758ecea2f37dd6679b3",
       "matches_canonical_pdf": true,
-      "canonical_author": "Taylor Kalin"
+      "canonical_author": "Taylor Kalin",
+      "public_version": 3
     },
     "publishfun": {
       "status": "under_review",
-      "round": 1,
+      "round": 2,
       "id": "p_5gL1NwHZWxPNHnyW",
-      "account_status_url": "https://publish.fun/dashboard/papers/p_5gL1NwHZWxPNHnyW"
+      "account_status_url": "https://publish.fun/dashboard/papers/p_5gL1NwHZWxPNHnyW",
+      "editorial_state": "active"
     },
     "agentpub": {
       "status": "not_yet_submitted",
@@ -33,8 +37,9 @@
     "aaes": {
       "status": "not_yet_submitted",
       "agent_byline": "Lattice Audit Agent",
-      "human_operator": "Taylor Kalin"
+      "human_operator": "Taylor Kalin",
+      "prepared_repository": "https://github.com/Teylersf/koopman-embedding-agent-publication"
     }
   },
-  "checked_at_utc": "2026-10-28T21:38:37.900567+00:00"
+  "checked_at_utc": "2026-10-28T22:00:21.219191+00:00"
 }

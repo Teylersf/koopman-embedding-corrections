@@ -22,6 +22,11 @@ Julien Zylberman, and Nuno F. Loureiro.
 - [Verification results](results/verification.json)
 - [Publication status](submissions/publication-status.json)
 
+Public preprint: [AiraXiv 2610.0108](https://airaxiv.com/papers/view/2610.0108/).
+The [v1.0.0 release](https://github.com/Teylersf/koopman-embedding-corrections/releases/tag/v1.0.0)
+provides the PDF alongside the repository's complete source and reproducibility
+package. Venue review outcomes are recorded separately in the status file.
+
 The principal findings concern the printed geometric criterion and the
 proposed reference-phase inference. Supporting corrections address sampling
 variance, benchmark calibration, regularity, and covariance notation.

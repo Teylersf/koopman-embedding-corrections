@@ -10,6 +10,12 @@
 - Revised content includes the complete-flow width-uniform estimate and proof, smooth conservative Liouville realization, known-support rank qualification, practical consequences, standard circular-mean attribution, and the explicit seven-group execution record.
 - Figure links target the public GitHub raw PNG paths. No local path, unresolved reference, unsupported author macro or placeholder remains.
 - Taylor Kalin is the sole author in the header. ORCID and contact details are retained; the author/methods disclosure remains separate. The owner-confirmed self-funded statement and dissemination disclosure are preserved.
-- Manuscript length: 57741 characters; title 129 characters; abstract 1576 characters.
+- Manuscript length: 58142 characters; title 129 characters; abstract 1576 characters.
 - Source main.tex SHA-256: d872370112d84ed15e55d181681c5ed2589746fb02abd60d8903bbfc5d33bb3b.
 - Conversion verified preservation and formatting, not an independent scientific peer review.
+
+Version 1.1.1 synchronizes two prose-only changes in TeX and Markdown: rendered
+Matilda date labels replace the earlier access limitation, and the peripheral
+Fig. 4 annotation sentence is removed. All 362 math segments and 52 headings
+match the stored round-2 manuscript. The PDF remains 18 pages with 44 equation
+numbers and nine references. Two Matilda/documentation links were added.

@@ -1,0 +1,57 @@
+{
+  "checked_at_utc": "2026-10-28T22:08:53.430064+00:00",
+  "paper_id": "p_5gL1NwHZWxPNHnyW",
+  "round": 2,
+  "submitted_characters": 57741,
+  "stored_characters": 57676,
+  "exact_body_match_after_two_venue_image_url_rewrites": true,
+  "submitted_sha256": "df98134c80d7671c7204f01196d5704927106840ecdff18536af8ff72c82b15f",
+  "stored_sha256": "946b42520019da49868d2072623ed123db4e10572b2ed2bd1d4d3c417f7cd493",
+  "source_equations_and_appendices_preserved": true,
+  "image_rewrites": [
+    {
+      "submitted": "https://raw.githubusercontent.com/Teylersf/koopman-embedding-corrections/main/figures/geometry-criterion.png",
+      "stored": "https://files.publish.fun/uploads/up_SX1N_MJroL5V1Jrp/figures/figure-1.png"
+    },
+    {
+      "submitted": "https://raw.githubusercontent.com/Teylersf/koopman-embedding-corrections/main/figures/phase-inference.png",
+      "stored": "https://files.publish.fun/uploads/up_SX1N_MJroL5V1Jrp/figures/figure-2.png"
+    }
+  ],
+  "venue_hosted_figures": [
+    {
+      "name": "geometry-criterion.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 73366,
+      "bytes_identical": false,
+      "pixels_identical": true,
+      "remote_dimensions": [
+        1386,
+        682
+      ],
+      "canonical_dimensions": [
+        1386,
+        682
+      ],
+      "sha256": "299f779057a70288dc852dc3de1848512c34c3703e7a422cf3b3c644ec2b1273"
+    },
+    {
+      "name": "phase-inference.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 158359,
+      "bytes_identical": false,
+      "pixels_identical": true,
+      "remote_dimensions": [
+        1452,
+        693
+      ],
+      "canonical_dimensions": [
+        1452,
+        693
+      ],
+      "sha256": "61b16ce961d18425c18284cfc9685050043ebbe4a8a720641f320474af575988"
+    }
+  ]
+}

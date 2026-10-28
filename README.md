@@ -23,7 +23,7 @@ Julien Zylberman, and Nuno F. Loureiro.
 - [Publication status](submissions/publication-status.json)
 
 Public preprint: [AiraXiv 2610.0108](https://airaxiv.com/papers/view/2610.0108/).
-The [v1.1.0 release](https://github.com/Teylersf/koopman-embedding-corrections/releases/tag/v1.1.0)
+The [v1.1.1 release](https://github.com/Teylersf/koopman-embedding-corrections/releases/tag/v1.1.1)
 provides the PDF alongside the repository's complete source and reproducibility
 package. Venue review outcomes are recorded separately in the status file.
 Version 1.1.0 adds a complete-flow increment estimate, a smooth conservative-flow
@@ -31,6 +31,8 @@ realization of the readout counterexample, quantified practical consequences,
 verified source excerpts, and a seventh numerical verification group. The
 standard circular-statistics identity is explicitly distinguished from the
 source-specific correction. The author's confirmed self-funding is disclosed.
+Version 1.1.1 clarifies the rendered Matilda date fields and removes a peripheral
+figure-caption comment; its mathematics and numerical results are unchanged.
 
 The principal findings concern the printed geometric criterion and the
 proposed reference-phase inference. Supporting corrections address sampling

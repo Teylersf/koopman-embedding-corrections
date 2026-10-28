@@ -79,7 +79,10 @@ post-translation coordinate definition at line 1380, and preserves the source's
 Gaussian/constant-covariance disclosures. The original archive and source file
 have independently checkable SHA-256 hashes; whole source files are not
 redistributed. The official v2 history and PDF stamp state 25 September 2026.
-A reviewer reported 29 September on Matilda, but the public response accessible
-to this audit contained only an application shell; the field's value and
-meaning were not independently established. No source authors were contacted,
-and no author confirmation or unpublished revision knowledge is claimed.
+The rendered Matilda record labels 29 September as both Publication date and
+Source last update for its associated arXiv entry. That entry links to the same
+unversioned arXiv record and does not identify a separate revision. Its metadata
+documentation does not specify how those date fields map to arXiv's revision
+history; no distinct scientific revision is inferred. Exact labels and access
+details are recorded in [SOURCE.md](../SOURCE.md). No source authors were
+contacted, and no author confirmation or unpublished revision knowledge is claimed.

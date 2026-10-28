@@ -36,6 +36,26 @@ The principal findings concern the printed geometric criterion and the
 proposed reference-phase inference. Supporting corrections address sampling
 variance, benchmark calibration, regularity, and covariance notation.
 
+In practical terms:
+
+- The printed geometric test counts the separation the starting points already
+  had. Its expansion leaves that separation out, making its stated small-value
+  test impossible for the specified directional maps. The paper gives an
+  increment-based repair and a local complete-flow estimate.
+- The phase scan can lose contrast without moving its peak. Its peak is a
+  circular mean; an explicit pair of distributions has the same entire scan
+  and different arithmetic means. More samples of that scan cannot distinguish
+  those two means.
+- Sampling a coordinate and sampling a one-bit ancilla have different
+  variances. In the checked example, this changes an RMS shot budget by a factor
+  of 2,500 while preserving the inverse-square precision scaling.
+- The source definitions give a different benchmark width coefficient, and its
+  stated Gaussian-remainder order needs stronger smoothness assumptions. The
+  paper supplies exact calculations and counterexamples for both statements.
+
+The [finding ledger](audit/ledger.md) ties each claim to a specific source
+statement and records the conclusions that remain valid.
+
 The underlying nonlinear cloud-to-trajectory discrepancy remains valid.
 Explicit Gaussian and covariance-closure assumptions in the source are
 acknowledged. This study does not claim every statement is wrong, establish

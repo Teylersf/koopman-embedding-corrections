@@ -8,10 +8,11 @@
 - Preserved all seven numerical table rows, two figure captions, source transcriptions, eight compiled bibliography entries and their existing source/DOI links, and both execution-code blocks.
 - Figure links target the public GitHub raw PNG paths requested by the parent. No local path, unresolved reference, unsupported author macro or placeholder remains.
 - Taylor Kalin is the sole author in the header. ORCID and contact details are retained. Author/methods disclosure remains a separate section, and the dissemination disclosure is preserved.
-- Manuscript length: 43574 characters; title 129 characters; abstract 1505 characters.
-- Source main.tex SHA-256: 122d63565846d24cf5d25c347d2ca8576f1074da2b87235aaf7a8ebd955239ca.
+- Manuscript length: 43600 characters; title 129 characters; abstract 1505 characters.
+- Source main.tex SHA-256: 1a961cb3f2ac472c2689b7192d46deabaecf811ba70bdc568602fa582bdcf4b1.
 - Conversion verified preservation and formatting, not an independent scientific peer review.
 
 - Synchronized the final funding/competing-interests paragraph and the corrected scientific notation in the numerical table after the initial conversion; equation and proof counts are unchanged.
 
 - Joined the split appendix source hash into one inline code value; no mathematical content changed.
+- Updated the funding paragraph after Taylor Kalin confirmed self-funding; no mathematical content changed.

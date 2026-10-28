@@ -403,7 +403,7 @@ Taylor Kalin is the human author and is responsible for this submission. OpenAI 
 
 ### Funding and competing interests
 
-Computational work used locally available computing resources and AI tools. No external funding or competing interests were reported for this study.
+This study was self-funded by Taylor Kalin, including computing resources and AI tools. No external funding was received. No competing interests were reported for this study.
 
 ## Prior dissemination and parallel-submission disclosure
 

@@ -5,6 +5,14 @@ Target: arXiv:2609.28999v2, PDF SHA-256
 Numbering below refers to that PDF. This is a classified audit, not a claim to
 have identified every error.
 
+The central printed statements were additionally checked against the exact
+versioned arXiv TeX archive. [Selective source excerpts](../source-excerpts/README.md)
+provide original `Limit.tex` line numbers, independent artifact hashes and primary
+anchors. Active line 1380 explicitly describes the coordinate value after a
+translation, supporting G1's position/displacement reading. The excerpts also
+retain the disclosed closure assumptions; those assumptions are not classified
+as errors. No source-author confirmation is claimed.
+
 | ID | Location | Classification | Evidence and effect | Repair and scope |
 |---|---|---|---|---|
 | G1 | p. 5 Eq. (30), p. 6 Eq. (31), p. 13 Eq. (C1) | Demonstrated error affecting the geometric criterion | The definition compares final positions of initially separated points. Its expansion omits the initial offset. At zero time every directional maximum equals the width; for the stated own-axis-independent directional map each maximum is at least that width, so the normalized criterion is at least 1 rather than small. | Subtract initial separation or define transverse neighbors, then derive the implications of the changed quantity. This corrects the printed criterion, not the validity of every trajectory-reconstruction approach. |

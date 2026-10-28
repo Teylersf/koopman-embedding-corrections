@@ -2,7 +2,7 @@
 \label{sec:execution}
 The numerical code and checked results are pinned to Git commit
 \begin{quote}\small\ttfamily
-b8f3100e8360510e956edc4b77b1ba61bf8d6094
+1f006c4d0acae13b2ccee9e485cb31288c2cdc0d
 \end{quote}
 in the repository
 \url{https://github.com/Teylersf/koopman-embedding-corrections}.
@@ -11,13 +11,13 @@ finished manuscript and PDF. To reproduce the numerical values:
 \begin{Verbatim}[fontsize=\small]
 git clone https://github.com/Teylersf/koopman-embedding-corrections.git
 cd koopman-embedding-corrections
-git checkout b8f3100e8360510e956edc4b77b1ba61bf8d6094
+git checkout 1f006c4d0acae13b2ccee9e485cb31288c2cdc0d
 python -m pip install -r requirements.txt
 python -X utf8 experiments/verify.py
 python -X utf8 experiments/make_figures.py
 \end{Verbatim}
 The source and result hashes below identify the exact executed files. All
-six check groups completed with exit status zero. This is an author-environment
+seven check groups completed with exit status zero. This is an author-environment
 execution record, not a third-party certification. The complete log and JSON
 are included in the repository and release archive; the numerical table and
 explicit constructions make the main claims inspectable within this paper.
@@ -25,23 +25,24 @@ explicit constructions make the main claims inspectable within this paper.
 AUTHOR-ENVIRONMENT EXECUTION RECORD
 Deterministic classical checks, not independent human peer review or third-party certification.
 Command: python -X utf8 experiments/verify.py
-Started UTC: 2026-10-28T21:25:55.827272+00:00
+Started UTC: 2026-10-28T21:49:07.529024+00:00
 Python: 3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]
 Platform: win32
 NumPy: 2.3.5
 Script SHA-256:
-  d31f8924db3cfd234806f615e82357c0
-  c8e89b191041363676e62502a0056add
+  46ad81502f628e4203a64d08ef56d6b9
+  d80c1f4b8fcffd58f92ffc182b91df21
 PASS: geometric_criterion
 PASS: phase_and_sampling
 PASS: single_frequency_nonidentifiability
 PASS: LV_calibration
 PASS: C2_remainder
 PASS: covariance_and_width
+PASS: complete_flow_uniform_remainder
 All assertions passed: true
 Exit status: 0
 Verification JSON SHA-256:
-  17368c8586be78a587793e40914ed995
-  f0c0f3cc0296b3b52e6fa5341e8286df
-Elapsed seconds: 0.016653
+  f4b9923ee391811ce4f1826f46ea126a
+  d13ef7a4806b8c9d11a166c40be4ae7c
+Elapsed seconds: 0.994749
 \end{Verbatim}

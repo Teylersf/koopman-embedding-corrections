@@ -43,6 +43,17 @@ discussion or unpublished communication.
   checked arXiv v3.** Variance-aware estimation concerns the variance of the
   actual random output. This is relevant to distinguishing a coordinate sample
   from a Bernoulli ancilla, rather than replacing one variance by another.
+- **Mardia and Jupp, Directional Statistics, Wiley (publisher-listed 1999),
+  DOI [10.1002/9780470316979](https://doi.org/10.1002/9780470316979).**
+  Chapter 2, *Summary Statistics*, pp. 13–24, covers directional location,
+  concentration/dispersion, and trigonometric moments. The circular mean and
+  resultant interpretation is established directional-statistics context;
+  this correction's contribution is its application to the source's precise
+  phase-floor argument and its explicit counterexamples. Publisher metadata and
+  the chapter contents were inspected, but the full chapter could not be read
+  through the ordinary public PDF link, which redirected to the abstract page.
+  The manuscript therefore includes its own mathematical derivation rather than
+  relying on an unchecked quotation or theorem from the book.
 
 ## Contribution of this note
 
@@ -59,3 +70,16 @@ definition or estimator is distinct from proving that the original practical
 benchmarks fail. The latter would require consistent original initializations,
 implementation details, and grid/time refinement; their qualitative plots alone
 do not establish that stronger claim.
+
+## Exact source and date verification
+
+The [selective source archive evidence](../source-excerpts/README.md) links all
+central criticism to the exact arXiv v2 `Limit.tex`, including the explicit
+post-translation coordinate definition at line 1380, and preserves the source's
+Gaussian/constant-covariance disclosures. The original archive and source file
+have independently checkable SHA-256 hashes; whole source files are not
+redistributed. The official v2 history and PDF stamp state 25 September 2026.
+A reviewer reported 29 September on Matilda, but the public response accessible
+to this audit contained only an application shell; the field's value and
+meaning were not independently established. No source authors were contacted,
+and no author confirmation or unpublished revision knowledge is claimed.

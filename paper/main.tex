@@ -43,10 +43,11 @@ omits that separation. For the stated directional transport maps, the resulting
 normalized quantity is at least one, so it cannot satisfy the proposed
 small-distortion criterion as written. We give a corrected displacement
 definition and a local derivative estimate, without asserting a universal
-replacement stability threshold. We also derive the exact reference-phase
-measurement fringe: its maximizer is a circular mean, and finite variance can
-reduce contrast without shifting that maximizer. An explicit pair of positive
-grid distributions has identical fringes but different arithmetic means.
+replacement stability threshold. Applying the standard circular-mean
+description to the source's phase-reference circuit shows that finite variance
+can reduce contrast without shifting the maximizing reference. An explicit
+pair of positive grid distributions has identical fringes but different
+arithmetic means, including in a conservative transported-density realization.
 Further corrections distinguish Bernoulli-ancilla sampling from direct
 coordinate sampling, reconcile the Lotka--Volterra benchmark parameter with
 the source definitions, and exhibit a twice continuously differentiable
@@ -71,8 +72,9 @@ $\E{F(X)}$ and $F(\E{X})$ for nonlinear $F$.
 The present note concerns statements that can be checked independently of a
 large-scale quantum implementation. Its main contributions are: (i) an exact
 initial-separation obstruction to the geometric criterion printed in source
-Eqs.~(30)--(31); (ii) an exact characterization and nonidentifiability example
-for the proposed reference-phase readout; and (iii) reproducible corrections
+Eqs.~(30)--(31); (ii) an explicit nonidentifiability construction for the
+proposed reference-phase readout and a correction to its contrast-to-phase
+substitution; and (iii) reproducible corrections
 to sampling prefactors, a benchmark calibration, and regularity assumptions.
 Each correction is local to the statement identified. Standard ingredients
 such as Taylor's theorem, characteristic functions, and quantum amplitude
@@ -127,6 +129,7 @@ a different quantity from it.
 \input{sections/readout}
 \input{sections/benchmarks}
 \input{sections/regularity}
+\input{sections/consequences}
 
 \section{Reproducible experiments}
 \label{sec:experiments}
@@ -149,6 +152,11 @@ and demonstrate the regularity counterexample by Gaussian quadrature.
 The covariance appendix checks exact finite-matrix identities. A small
 rounding tolerance is used only for floating-point evaluation; the main
 counterexamples also have analytic proofs.
+
+A seventh group checks a nontrivial complete Hamiltonian flow in the coupled
+regime $\sigma=\kappa h$. The width-uniform estimate is proved in
+Proposition~\ref{prop:complete-increment}; the numerical calculation uses
+RK4 refinement and is not represented as an exact continuum execution.
 
 \input{results-table}
 
@@ -226,7 +234,8 @@ reported for this study.
 \section*{Prior dissemination and parallel-submission disclosure}
 This is one correction study. Its public GitHub repository is
 \url{https://github.com/Teylersf/koopman-embedding-corrections}.
-AiraXiv is an intended preprint deposit. AgentPub and AAES versions are
+A preprint is public as \href{https://airaxiv.com/papers/view/2610.0108/}{AiraXiv 2610.0108}.
+AgentPub and AAES versions are
 planned after the Publish.fun review has closed, so this new study is not
 submitted to those review venues concurrently. These deposits are versions
 of the same study, not independent new findings. The intended dissemination

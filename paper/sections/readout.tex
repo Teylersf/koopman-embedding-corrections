@@ -17,8 +17,12 @@ probability space, define
 \end{equation}
 The finite-grid formula is exact, with the probabilities summing to one;
 no Riemann-sum approximation is required for the following statements.
+The first circular moment and its argument are standard objects in
+directional statistics~\cite{directional}. The next proposition applies
+that standard identity to the source's particular reference fringe; the
+identity itself is not a claim of novelty.
 
-\begin{proposition}[Exact phase-reference fringe]
+\begin{proposition}[Standard circular-moment identity for the reference fringe]
 \label{prop:fringe}
 For every real $a$,
 \begin{equation}
@@ -45,7 +49,7 @@ shift generally introduces an odd component about the original peak.
 Equation~\eqref{eq:exact-fringe} identifies the relevant quantities without
 this substitution.
 
-\begin{corollary}[Positive variance without phase bias]
+\begin{corollary}[Standard symmetry consequence: positive variance without phase bias]
 \label{cor:symmetric-no-bias}
 If $Y:=\Theta-\mu$ has a symmetric distribution and
 $C:=\E{\cos2Y}>0$, then
@@ -125,10 +129,72 @@ $0<t<\pi/2$, so $c>b/a$.
 
 At $\eta=0.1$ the mean separation is approximately
 $1.9659219701\times10^{-4}$. All four support points lie on a
-$16$-point binary grid. This is an identifiability statement for the
-fixed-frequency reference-fringe family. It is not an impossibility
-theorem for algorithms that encode a different function, obtain other
-Fourier moments, or measure additional information from the state.
+$16$-point binary grid; this is an explicit embedding, not a claim that
+this grid size is minimal. On a \emph{prescribed} support of at most three
+distinct phases modulo $\pi$, normalization and $z$ determine the weights:
+the columns of the constraint matrix are
+$(1,\cos2x_j,\sin2x_j)^\top$, and three distinct points on a circle cannot
+be collinear. Thus the matrix has full column rank. Four is the smallest
+support size permitting different weights with the same fringe under
+these known-support, nonaliased conditions. This statement does not apply
+to an unknown support or assert a universal minimum for other
+measurement models.
+
+\subsubsection{Smooth realization in a conservative Liouville flow}
+The four-point construction can be realized by smooth probability
+densities in the same class of conservative dynamics, rather than only
+by an abstract discrete distribution. Choose an even, nonnegative
+$\varphi\in C_c^\infty((-\varepsilon,\varepsilon))$ of unit mass,
+where $0<\varepsilon<1/32$, and an even-about-$1/2$, smooth probability
+density $g$ supported in $(1/2-r,1/2+r)$, with $0<r<1/4$.
+Using the weights and support above, set
+\begin{equation}
+ \nu^\pm(p)=\sum_{j=1}^4p_j^\pm\varphi(p-x_j),\qquad
+ \rho_0^\pm(q,p)=g(q)\nu^\pm(p).
+ \label{eq:continuous-packets}
+\end{equation}
+The bumps are disjoint and lie inside $(0,1)$. They have zero mean
+relative to their centers, so $\nu^\pm$ retains exactly the four-point
+arithmetic means. The construction can be placed on the periodic unit
+torus, giving a globally defined compact, measure-preserving flow; the
+packets below remain in one coordinate chart for the interval considered.
+Under the nonlinear Hamiltonian shear
+\eqref{eq:nonlinear-shear}, their exact Liouville evolution is
+\begin{equation}
+ \rho_t^\pm(q,p)=g(q-t\sin(2\pi p))\nu^\pm(p).
+ \label{eq:continuous-packet-flow}
+\end{equation}
+For $0\leq t\leq T<1/2-r$, no $q$ support crosses the coordinate
+boundary. The $p$ marginal is unchanged. Define the common factor
+$\widehat\varphi(2)=\int e^{2iu}\varphi(u)\,du$. Then
+\begin{equation}
+ \mathbb E_{\rho_t^\pm}[e^{2iP}]
+ =\widehat\varphi(2)\sum_jp_j^\pm e^{2ix_j},\qquad
+ \mathbb E_{\rho_t^\pm}[P]=\sum_jp_j^\pm x_j.
+ \label{eq:continuous-fringe-and-mean}
+\end{equation}
+Here the subscript specifies the averaging density. The characteristic
+moments, and therefore the entire reference fringes for $\Theta=P$,
+remain identical, while the means remain different by
+\eqref{eq:four-point-means}. The flow is divergence-free and has the
+source's stronger own-coordinate independence. This gives an explicit
+continuous, conservative realization of the statistical ambiguity.
+These smooth mixtures are \emph{not Gaussian}. They do not contradict
+identifiability within a prescribed exact Gaussian family, or an
+algorithm's use of additional knowledge of its prepared initial state.
+They are separate from the symmetric-Gaussian counterexample to a
+mandatory variance-caused phase bias.
+
+One may append stationary variables $Z$ with the same independent
+distribution in both states, taking the product with a common density
+$h(Z)$ and setting their vector-field components to zero. Additional
+observables of $Z$ then have the same distribution in both experiments.
+Reference fringes for phases of the form $P+k(Z)$ also remain equal,
+because their characteristic moments acquire the same factor
+$\E{e^{2ik(Z)}}$. This extension does not assert nonidentifiability from
+arbitrary joint observables: other encoded functions, additional Fourier
+frequencies, or measurements of further state information can distinguish
+the two packets.
 
 \subsection{Direct mean encoding and its resource assumptions}
 Let a state have grid probabilities $p_x$, and let $0\leq f(x)\leq1$.
@@ -153,28 +219,26 @@ estimation algorithm or end-to-end quantum speedup is claimed here.
 \subsection{Two sampling experiments have different variances}
 The measurement-cost prefactor in source Sec.~V, p.~6, is written in
 terms of the packet covariance. For an ancilla trial $Y\in\{0,1\}$
-with success probability $p_f$, however, independent trials give
+with success probability $p_f$, independent trials give
 \begin{equation}
  \operatorname{Var}\!\left(\frac1M\sum_{m=1}^MY_m\right)
  =\frac{p_f(1-p_f)}{M}.
  \label{eq:ancilla-variance}
 \end{equation}
 If instead one samples the coordinate $X$ directly in the computational
-basis, its sample mean has variance $\operatorname{Var}(X)/M$.
-These statements concern different recorded random variables.
-For $f(X)=X$ and any distribution on $[0,1]$ symmetric about $1/2$,
-$p_f=1/2$ and the ancilla variance per shot is $1/4$, irrespective of
-the coordinate variance. A narrow Gaussian packet can have arbitrarily
-small coordinate variance without making these ancilla outcomes less
-random. Source Appendix~D.1 analyzes direct Gaussian samples, while
-Appendix~D.2 separately gives the Bernoulli variance factor. The former
-cannot be transferred as the prefactor of the latter circuit.
+basis, the variance is $\operatorname{Var}(X)/M$. Source Appendix~D.1
+analyzes the latter experiment, whereas Appendix~D.2 separately gives
+the Bernoulli variance factor. These describe different recorded
+variables, so the direct-sampling covariance prefactor cannot be
+transferred to the ancilla circuit.
 
-The inverse-square accuracy exponent for ordinary independent sampling
-survives this correction. For example, Hoeffding's inequality for the
-ancilla sample mean gives failure probability at most
-$2e^{-2M\epsilon^2}$. The correction concerns the measured variable and
-its variance prefactor, rather than a refutation of standard sampling or
-amplitude-estimation scaling. Finally, estimating the actual packet mean
-accurately does not remove the separate difference between that mean
-and the nonlinear trajectory launched at its initial center.
+For $f(X)=X$ and a packet symmetric about $1/2$, $p_f=1/2$ and the
+ancilla variance per shot is $1/4$, regardless of packet width. At
+coordinate width $\sigma=0.01$, this is $2500$ times the approximately
+$\sigma^2$ direct-sampling variance; the same factor applies to the
+shot counts needed for the same sample-mean variance. The ordinary
+inverse-square accuracy exponent survives, as does standard amplitude
+estimation for the encoded probability. The correction is to the
+experiment-specific resource prefactor. Accurate measurement of the
+actual packet mean also leaves the separate nonlinear mean-trajectory
+discrepancy unchanged.

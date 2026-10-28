@@ -1,0 +1,58 @@
+\section{Consequences for numerical and measurement choices}
+\label{sec:consequences}
+The corrections change identifiable quantitative prescriptions, even where a
+qualitative demonstration of successful trajectory reconstruction remains
+valid. They should be assessed separately from the general possibility of
+simulating a conservative density.
+
+\paragraph{The geometric acceptance test.}
+Under the printed definition, changing the packet width or taking a smaller
+time step cannot make the stated directional-map ratio less than about $0.1$:
+its lower bound is one. For the concrete nonlinear shear with
+$\sigma=0.01$ and $h=0.001$, the checked raw ratio is $1.0000098691$, while the
+increment ratio is $0.0044399602$. Thus the same step is rejected by the
+printed statistic and can have small actual displacement distortion. A new
+definition requires a newly justified interpretation of the threshold; merely
+changing the right-hand numerical tolerance does not repair the missing
+initial offset in the source's expansion. The complete-flow estimate above
+states the additional temporal contribution that must be retained when
+$\sigma$ is proportional to $h$.
+
+\paragraph{The readout target and stopping precision.}
+For the symmetric finite-grid packet with width $0.01$, its coordinate
+variance is approximately $10^{-4}$ and its fringe contrast is approximately
+$0.99980002$, but its phase maximizer remains the arithmetic mean. There is
+no nonzero phase-bias floor in this example. A user should not stop refining
+a mean estimate solely because the packet has nonzero variance. Conversely,
+the explicit same-fringe pair has a mean difference of about
+$1.966\times10^{-4}$ that no number of samples of that fixed-frequency fringe
+can distinguish. One must change the encoding or obtain additional
+information to estimate an arbitrary arithmetic mean. The source's direct
+observable encoding is one available alternative. Whether more accurate
+readout improves a \emph{single-trajectory} estimate still depends on the
+separate cloud-to-trajectory bias.
+
+\paragraph{Shot allocation.}
+For independent samples with root-mean-square error target $\epsilon=0.001$,
+a coordinate variance of $10^{-4}$ gives $M\approx100$, while the corresponding
+ancilla variance $1/4$ gives $M=250{,}000$. The factor is $2500$, not a change
+of the inverse-square exponent. These are variance-based root-mean-square
+counts, not fixed-confidence guarantees. A confidence requirement introduces
+its own tail bound; it does not identify the two random variables.
+
+\paragraph{Packet-width calibration.}
+Under the same source heuristic $R\lesssim0.1$, the printed decimal
+$R/\sigma=2.29$ suggests $\sigma\lesssim0.04367$, whereas the displayed
+definitions give $\sigma\lesssim0.14142$. This is a factor of about $3.24$
+in the nominal width ceiling. Other localization, boundary, and error-budget
+constraints may be stricter. Both calibrations accept the source's small
+initial Lotka--Volterra width, so the correction is to the quantitative
+guideline rather than a claim that this particular plotted orbit fails.
+
+\paragraph{Observable error budgets and covariance constants.}
+The $C^2$ counterexample has a cubic expectation in the packet width. A
+fourth-order remainder budget underestimates it by an unbounded factor as the
+width tends to zero; either the regularity or the budget must change.
+Coordinate and quadratic moments remain exact identities. Appendix~
+\ref{sec:covariance} identifies the precise smaller covariance bound that
+fails and evaluates the repaired main-text constant in the same example.

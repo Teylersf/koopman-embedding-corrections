@@ -1,31 +1,31 @@
 {
   "canonical_author": "Taylor Kalin",
-  "pages": 15,
+  "pages": 18,
   "code_pin": {
-    "code_commit": "b8f3100e8360510e956edc4b77b1ba61bf8d6094",
-    "script_sha256": "d31f8924db3cfd234806f615e82357c0c8e89b191041363676e62502a0056add",
-    "results_sha256": "17368c8586be78a587793e40914ed995f0c0f3cc0296b3b52e6fa5341e8286df"
+    "code_commit": "1f006c4d0acae13b2ccee9e485cb31288c2cdc0d",
+    "script_sha256": "46ad81502f628e4203a64d08ef56d6b9d80c1f4b8fcffd58f92ffc182b91df21",
+    "results_sha256": "f4b9923ee391811ce4f1826f46ea126ad13ef7a4806b8c9d11a166c40be4ae7c"
   },
   "artifacts": [
     {
       "path": "paper/main.pdf",
-      "bytes": 181247,
-      "sha256": "8f7e9de212b689048783b93a974ab68121f00660ef15a9a484581145be79d958"
+      "bytes": 209416,
+      "sha256": "e54f0d0ada730b45bbcd987c94523b1c9a987fb96a12f758ecea2f37dd6679b3"
     },
     {
       "path": "paper/main.tex",
-      "bytes": 13007,
-      "sha256": "1a961cb3f2ac472c2689b7192d46deabaecf811ba70bdc568602fa582bdcf4b1"
+      "bytes": 13492,
+      "sha256": "d872370112d84ed15e55d181681c5ed2589746fb02abd60d8903bbfc5d33bb3b"
     },
     {
       "path": "paper/references.bib",
-      "bytes": 3358,
-      "sha256": "5dfa84e0ff68440baaf572718cb79a2038909e117be967bd06320d157c34d975"
+      "bytes": 3760,
+      "sha256": "53649cd3648444d0c9ad6c06efb06afc0316e86ad44bfd1fd367bae08d4289f4"
     },
     {
       "path": "experiments/verify.py",
-      "bytes": 16097,
-      "sha256": "d31f8924db3cfd234806f615e82357c0c8e89b191041363676e62502a0056add"
+      "bytes": 20887,
+      "sha256": "46ad81502f628e4203a64d08ef56d6b9d80c1f4b8fcffd58f92ffc182b91df21"
     },
     {
       "path": "experiments/make_figures.py",
@@ -34,23 +34,23 @@
     },
     {
       "path": "results/verification.json",
-      "bytes": 15137,
-      "sha256": "17368c8586be78a587793e40914ed995f0c0f3cc0296b3b52e6fa5341e8286df"
+      "bytes": 23608,
+      "sha256": "f4b9923ee391811ce4f1826f46ea126ad13ef7a4806b8c9d11a166c40be4ae7c"
     },
     {
       "path": "results/execution.log",
-      "bytes": 15891,
-      "sha256": "cb2a6dcfe40ed284f59cac80d802c316384f430fa13c559980bff78ee4fe0f8b"
+      "bytes": 24400,
+      "sha256": "1da4c427377256d2fabda268f5bb4193337cdbdf0eb72a15fd16e5e6672b11ab"
     },
     {
       "path": "submissions/manuscript.md",
-      "bytes": 43692,
-      "sha256": "995f085cf0c528d14de2aabf04effb916547d408d92284ab6d2bbb0bd91eb5d2"
+      "bytes": 57886,
+      "sha256": "df98134c80d7671c7204f01196d5704927106840ecdff18536af8ff72c82b15f"
     },
     {
       "path": "submissions/metadata.json",
-      "bytes": 2225,
-      "sha256": "eba966394b2021214e7b7c7a05e14e682aa00883aefb22dcdf4f0d0cf66e573b"
+      "bytes": 2296,
+      "sha256": "900904e1d8a786b0790d7df6fd22cd3b22dc0d2257956d8e067ed7603ba47a7c"
     },
     {
       "path": "paper/sections/benchmarks.tex",
@@ -58,24 +58,29 @@
       "sha256": "8b2cb0444708ad460e2854c35fc0573225eb5552cdbc996667d9c06e35fec9bf"
     },
     {
+      "path": "paper/sections/consequences.tex",
+      "bytes": 3588,
+      "sha256": "b1ca27944a67bc980f533850580910d62f4f5b323c325ac172186301ba0643eb"
+    },
+    {
       "path": "paper/sections/covariance.tex",
-      "bytes": 2516,
-      "sha256": "4661b7cdbe53b7dc6ebf6cdd15c060d1c6406b2343edbefde5c4f1f139963364"
+      "bytes": 3122,
+      "sha256": "ac9fb894a7f9011498754958a37ccbb2cd3eeca41abe1e51bca2a3bf130dd103"
     },
     {
       "path": "paper/sections/execution.tex",
-      "bytes": 1932,
-      "sha256": "55dbfc674b9f06cd00972f87c657c9bdf0900439f1925bb58b165855f993615e"
+      "bytes": 1972,
+      "sha256": "36cf0a5824cee166b818b1c698437f4e9f4e4709de3c89eb1cd11e5b3145cacc"
     },
     {
       "path": "paper/sections/geometry.tex",
-      "bytes": 6052,
-      "sha256": "a0ae9e846319c397cd901e9923d165dc258aa206cb8321889e441ee298f346f8"
+      "bytes": 10121,
+      "sha256": "375f425d5898a498f04b36a9efb9b03fd62e8d0d5fdb52213c95a5afbc42fc04"
     },
     {
       "path": "paper/sections/readout.tex",
-      "bytes": 8239,
-      "sha256": "1e1c4d06495979167671278ea2f70a9406ac5afec188d355b75192b3663f00e3"
+      "bytes": 11667,
+      "sha256": "bc4ae52fefea7e9a26438a2770eb08d496d012f83fbf0af6804b4cea72831eff"
     },
     {
       "path": "paper/sections/regularity.tex",
@@ -84,8 +89,8 @@
     },
     {
       "path": "paper/sections/source-evidence.tex",
-      "bytes": 5179,
-      "sha256": "20e8de445e9e7e606e74030fbd3e0877f37154760c08ca10932bedc5990990bf"
+      "bytes": 7269,
+      "sha256": "2a5e06bdea504f99765419512c0032faafe2fa90e75422fce1a7ed1bba248029"
     },
     {
       "path": "figures/geometry-criterion.pdf",
@@ -106,6 +111,51 @@
       "path": "figures/phase-inference.png",
       "bytes": 143765,
       "sha256": "9763378fd65c096e780fb5d8070efd4c3362a924ff5f2572bb7d72e95e8793bc"
+    },
+    {
+      "path": "source-excerpts/appendix-c-coordinate.txt",
+      "bytes": 1294,
+      "sha256": "625999e91be3dc5a4560371cb1cef7346b4069ef86e66b9523d9f5ccfa0eacd2"
+    },
+    {
+      "path": "source-excerpts/disclosed-closures.txt",
+      "bytes": 2116,
+      "sha256": "2232347fb16f6ed9f116398a362b6b061fb1432dc1b5274b0bef732262e85d00"
+    },
+    {
+      "path": "source-excerpts/geometric-eq30-31.txt",
+      "bytes": 1478,
+      "sha256": "fc867ffa78892ce74a38fe7dd989ec49305a9d8e0b7c33f8aa8f4b638edd013c"
+    },
+    {
+      "path": "source-excerpts/grover-eqD8-D10.txt",
+      "bytes": 2296,
+      "sha256": "71697a387ee2eb6b7cac06081f13d9eb002590d5c92cd110b837bc1d6057498d"
+    },
+    {
+      "path": "source-excerpts/manifest.json",
+      "bytes": 3882,
+      "sha256": "87ddb6683038496b70a43b2276a2aaec21acc7e97652311a6bfb1a40ca912045"
+    },
+    {
+      "path": "source-excerpts/observable-eq35-sampling.txt",
+      "bytes": 1512,
+      "sha256": "ae4a9bf49cf4d730f8290bcd9976fddf50abb4430fbf9c69c7282ff562bee80b"
+    },
+    {
+      "path": "source-excerpts/README.md",
+      "bytes": 3799,
+      "sha256": "e3c7b7bdd7e076c10f9d04fada5f278e14c62102702d7fc2e05cec9ebd202849"
+    },
+    {
+      "path": "source-excerpts/reynolds-definitions-eq45.txt",
+      "bytes": 1777,
+      "sha256": "40249bf814ad27c09e7cee53c535e52b77384931ac7cb21ec9ca35893b0931a0"
+    },
+    {
+      "path": "source-excerpts/verify.py",
+      "bytes": 2546,
+      "sha256": "ff24400f4e97a76e5fda80f004120f71cfc91807f6fac4c8ca3e64af865e0399"
     }
   ]
 }

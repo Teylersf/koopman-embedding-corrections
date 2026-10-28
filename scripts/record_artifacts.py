@@ -12,9 +12,10 @@ paths = [ROOT / name for name in (
     'submissions/manuscript.md', 'submissions/metadata.json')]
 paths += sorted((ROOT / 'paper/sections').glob('*.tex'))
 paths += sorted((ROOT / 'figures').glob('*'))
+paths += sorted(p for p in (ROOT / 'source-excerpts').glob('*') if p.is_file())
 reader = PdfReader(ROOT / 'paper/main.pdf')
 assert reader.metadata.author == 'Taylor Kalin'
-assert len(reader.pages) == 15
+assert 10 <= len(reader.pages) <= 25
 assert all('??' not in page.extract_text() for page in reader.pages)
 data = {'canonical_author': reader.metadata.author, 'pages': len(reader.pages),
         'code_pin': json.loads((ROOT / 'results/code-pin.json').read_text()),

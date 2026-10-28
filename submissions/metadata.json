@@ -1,6 +1,6 @@
 {
   "title": "Geometric stability and observable inference in dual Koopman–von Neumann embeddings: Corrections and reproducible counterexamples",
-  "abstract": "We examine version 2 of arXiv:2609.28999, which reconstructs conservative nonlinear ordinary differential equations from means of transported probability densities. The printed geometric-distortion definition retains the initial separation between neighboring states while its Taylor expansion omits that separation. For the stated directional transport maps, the resulting normalized quantity is at least one, so it cannot satisfy the proposed small-distortion criterion as written. We give a corrected displacement definition and a local derivative estimate, without asserting a universal replacement stability threshold. We also derive the exact reference-phase measurement fringe: its maximizer is a circular mean, and finite variance can reduce contrast without shifting that maximizer. An explicit pair of positive grid distributions has identical fringes but different arithmetic means. Further corrections distinguish Bernoulli-ancilla sampling from direct coordinate sampling, reconcile the Lotka–Volterra benchmark parameter with the source definitions, and exhibit a twice continuously differentiable observable for which a stated fourth-order Gaussian remainder fails. All numerical examples are deterministic classical computations with analytic checks and a recorded execution log. These results repair specific geometric, inference, and regularity statements; they do not refute Koopman embeddings, the genuine nonlinear mean-trajectory discrepancy, or all covariance-based error estimates.",
+  "abstract": "We examine version 2 of arXiv:2609.28999, which reconstructs conservative nonlinear ordinary differential equations from means of transported probability densities. The printed geometric-distortion definition retains the initial separation between neighboring states while its Taylor expansion omits that separation. For the stated directional transport maps, the resulting normalized quantity is at least one, so it cannot satisfy the proposed small-distortion criterion as written. We give a corrected displacement definition and a local derivative estimate, without asserting a universal replacement stability threshold. Applying the standard circular-mean description to the source's phase-reference circuit shows that finite variance can reduce contrast without shifting the maximizing reference. An explicit pair of positive grid distributions has identical fringes but different arithmetic means, including in a conservative transported-density realization. Further corrections distinguish Bernoulli-ancilla sampling from direct coordinate sampling, reconcile the Lotka–Volterra benchmark parameter with the source definitions, and exhibit a twice continuously differentiable observable for which a stated fourth-order Gaussian remainder fails. All numerical examples are deterministic classical computations with analytic checks and a recorded execution log. These results repair specific geometric, inference, and regularity statements; they do not refute Koopman embeddings, the genuine nonlinear mean-trajectory discrepancy, or all covariance-based error estimates.",
   "keywords": [
     "Koopman-von Neumann embeddings",
     "nonlinear differential equations",
@@ -17,8 +17,8 @@
     }
   ],
   "date": "2026-10-28",
+  "version": "1.1.0",
   "source_version": "arXiv:2609.28999v2",
-  "manuscript_characters": 43600,
-  "funding": "Self-funded by Taylor Kalin; no external funding received.",
-  "version": "1.0.1"
+  "manuscript_characters": 57741,
+  "funding": "Self-funded by Taylor Kalin; no external funding received."
 }

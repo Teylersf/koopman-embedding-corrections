@@ -58,6 +58,8 @@ hold under the directional-map interpretation given in its geometric
 discussion. If the intended map were instead the complete flow, the
 time-zero contradiction in \eqref{eq:flow-offset} would still remain:
 the normalized raw separation tends to $1$, rather than $0$, as $h\to0$.
+The following nonlinear example also gives an all-$h$ obstruction for the
+complete-flow interpretation, rather than only a time-zero objection.
 
 This obstruction occurs for a genuinely nonlinear conservative field. Set
 \begin{equation}
@@ -67,7 +69,10 @@ This obstruction occurs for a genuinely nonlinear conservative field. Set
 \end{equation}
 Then $\dot q=\partial_pH$, $\dot p=-\partial_qH$, and
 $\Phi_h(q,p)=(q+h\sin(2\pi p),p)$. Both own-coordinate derivatives
-vanish. A packet with means $(1/2,1/2)$ and a $p$ marginal symmetric
+vanish. Here the complete flow equals the sole nonidentity directional
+factor exactly; the other factor is the identity. Thus
+\eqref{eq:ratio-obstruction} applies to both interpretations for every
+admissible $h$. A packet with means $(1/2,1/2)$ and a $p$ marginal symmetric
 about $1/2$ has $\E{\sin(2\pi P)}=0$. Its mean therefore remains at the
 fixed-point trajectory $(1/2,1/2)$, exactly, on any interval without
 coordinate wrapping. A smooth compactly supported symmetric packet can
@@ -123,17 +128,107 @@ Substitute in \eqref{eq:increment-exact}. Expanding one order further gives
 \eqref{eq:increment-third-order}.
 \end{proof}
 
-For a complete smooth flow, \eqref{eq:increment-exact} has an additional
-uniform $O(h^2)$ term on a fixed neighborhood. After division by $\sigma$
-this is $O(h^2/\sigma)$; a joint small-width, small-step limit requires
-additional control. It must not be discarded as a grid-uniform statement.
+\subsection{A width-uniform complete-flow remainder}
+The remainder for a complete flow can be bounded uniformly as the packet
+width shrinks. A bound on two separate trajectory remainders would give a
+loose $O(h^2/\sigma)$ estimate after normalization. Keeping their difference
+inside the integral instead gives the following standard auxiliary ODE
+estimate. It concerns the exact complete flow, rather than a global error
+theorem for a Trotter approximation.
+
+\begin{proposition}[Complete-flow increment bound]
+\label{prop:complete-increment}
+Let $U\subset\R^d$ be open and convex, and let $F\in C^2(U;\R^d)$.
+Suppose $B(x,\sigma)\subset U$, $\sigma>0$, and all trajectories starting
+in that ball remain in $U$ for $0\leq t\leq h_0$. Assume the uniform bounds
+\begin{equation}
+ \sup_U\norm{F}_2\leq M,\qquad
+ \sup_U\norm{DF}_{\rm op}\leq J,\qquad
+ \sup_U\norm{D^2F}_{\rm bil}\leq H_{\rm v},\qquad
+ K:=H_{\rm v}M+J^2,
+ \label{eq:complete-constants}
+\end{equation}
+where $\norm{D^2F}_{\rm bil}$ is the operator norm of the vector-valued
+bilinear map $(u,v)\mapsto D^2F[u,v]$. Put
+$A_h(z)=\Phi_h(z)-z$ and
+\begin{equation}
+ R_h(x,\delta):=A_h(x+\delta)-A_h(x)
+              -h\bigl(F(x+\delta)-F(x)\bigr).
+ \label{eq:complete-remainder-definition}
+\end{equation}
+Then, for $0\leq h\leq h_0$ and $\norm{\delta}_2\leq\sigma$,
+\begin{equation}
+ \norm{R_h(x,\delta)}_2
+ \leq \frac{K h^2e^{Jh}}{2}\norm{\delta}_2.
+ \label{eq:complete-remainder-bound}
+\end{equation}
+Consequently, writing
+$H_i=\sup_{B(x,\sigma)}\norm{D^2F_i}_{\rm op}$, the complete-flow
+increment statistic satisfies
+\begin{equation}
+ \frac{D_i^{\rm inc}(h;x,\sigma)}{\sigma}
+ \leq h\norm{\nabla F_i(x)}_2
+       +\frac{h\sigma H_i}{2}
+       +\frac{K h^2e^{Jh}}{2}.
+ \label{eq:complete-increment-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Set $G=DF\,F$. Differentiating $G$ gives
+$DG[v]=D^2F[v,F]+DF\,DF\,v$, so
+$\sup_U\norm{DG}_{\rm op}\leq K$. Convexity permits the corresponding
+Lipschitz estimate for $G$. Twice integrating the ODE yields
+\begin{equation}
+ A_h(z)=hF(z)+\int_0^h\!\int_0^s G(\Phi_r(z))\,\dd r\,\dd s.
+ \label{eq:complete-double-integral}
+\end{equation}
+Subtract the formulas for $z=x+\delta$ and $z=x$ before taking norms.
+The flow Lipschitz estimate
+$\norm{\Phi_r(x+\delta)-\Phi_r(x)}_2\leq e^{Jr}\norm{\delta}_2$
+therefore gives
+\[
+ \norm{R_h(x,\delta)}_2
+ \leq K\norm{\delta}_2\int_0^h\!\int_0^s e^{Jr}\,\dd r\,\dd s
+ \leq\frac{K h^2 e^{Jh}}2\norm{\delta}_2.
+\]
+Combining this with the segmentwise second-order Taylor bound for
+$F_i(x+\delta)-F_i(x)$ proves \eqref{eq:complete-increment-bound}.
+\end{proof}
+
+The constants in \eqref{eq:complete-remainder-bound} are independent of
+$\sigma$ when the same neighborhood and derivative bounds apply. In a
+coupled regime $\sigma=\kappa h$ with fixed $\kappa>0$,
+\begin{equation}
+ \frac{D_i^{\rm inc}}{\sigma}
+ \leq h\norm{\nabla F_i(x)}_2
+ +\frac{\kappa H_i h^2}{2}+\frac{K h^2e^{Jh}}2.
+ \label{eq:coupled-width-step}
+\end{equation}
+The nonlinear-curvature and complete-flow temporal terms are both
+$O(h^2)$ and must both be retained. This local estimate does not establish
+a global trajectory-reconstruction criterion.
+
+An additional numerical group uses the nontrivial complete Hamiltonian
+flow $F(q,p)=(\sin(2\pi p),\sin(2\pi q))$, with
+$H=-\cos(2\pi p)/(2\pi)+\cos(2\pi q)/(2\pi)$. On $\R^2$, valid
+global constants are $M=\sqrt2$, $J=2\pi$, and
+$H_{\rm v}=(2\pi)^2$. The script compares the normalized remainder with
+\eqref{eq:complete-remainder-bound} for $h\in\{.01,.02,.04\}$ and
+$\sigma=\kappa h$, $\kappa\in\{.5,1,2\}$. It integrates the center
+and 128 boundary perturbations by RK4, comparing 1024 with 2048 internal
+steps. These are converged numerical checks of selected trajectories,
+not exact continuum executions or a certification of all perturbations;
+the uniform statement follows from the proposition's proof.
 
 The two terms in \eqref{eq:increment-bound} separate linear stretching
 from local curvature. Increment distortion itself can be nonzero for an
 affine field, even though averaging then follows the exact trajectory.
-If only the nonlinear part is desired, one can further subtract
+For a directional substep, if only the nonlinear part is desired, one can further subtract
 $h\sigma\nabla F_i(x)\cdot\xi$ inside \eqref{eq:increment-distortion}; its
-normalized magnitude is bounded by the Hessian term alone.
+normalized magnitude is bounded by the Hessian term alone. For a complete
+flow, the additional temporal remainder in
+\eqref{eq:complete-increment-bound} must also be included.
 These are standard local Taylor estimates. They repair the definition and
 expose its assumptions; they do not establish a new universal
 Ehrenfest--Reynolds threshold or a global trajectory-accuracy theorem.

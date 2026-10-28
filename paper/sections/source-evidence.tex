@@ -8,9 +8,28 @@ The 17-page supplied PDF is byte-identical to a fresh versioned arXiv download:
 \texttt{f895d195c935bcc9e3d0b14d2499f59aa}\\
 \texttt{497b8fcdce7d69f13fbc74d10301add}.
 The official record checked on 28 October 2026 lists v2, revised
-25 September 2026, and no journal reference. The following transcriptions were
-checked against rendered PDF pages. No persistence claim is made for an
-unexamined revision or version of record.
+25 September 2026 at 21:21:38 UTC, and no journal reference or later revision.
+The PDF stamp also states 25 September. A reviewer reported a 29 September date
+on a Matilda aggregator page. Our ordinary public request to that page returned
+only a JavaScript application shell, so neither the reported date nor its field
+meaning was independently established. We use the versioned primary-record
+date. No source author has been contacted; no author confirmation is claimed.
+No persistence claim is made for an unexamined revision or version of record.
+
+The versioned \href{https://arxiv.org/src/2609.28999v2}{arXiv TeX archive}
+was retrieved separately by one ordinary public request (HTTP 200):
+740,540 bytes, SHA-256
+\texttt{663a2a2296ad605607c47baa1854fafd76}\\
+\texttt{124593cb4f92bf8e209e76da6516e2}.
+Its original \texttt{Limit.tex} has 99,001 bytes and SHA-256
+\texttt{cd636885026f6567d9cfa922ac4d3f77}\\
+\texttt{f6f9bf25d6f5cf482ed775b282174112}.
+The following transcriptions were checked against both this TeX and rendered
+PDF pages. The repository's
+\href{https://github.com/Teylersf/koopman-embedding-corrections/tree/main/source-excerpts}{selective source excerpts}
+retain original filenames, hashes and line numbers, with an independent
+archive-to-excerpt verifier. The original archive, full TeX and PDF are not
+redistributed.
 
 \subsection{Geometric definition and criterion}
 On PDF p.~5, source Eq.~(30) defines the ``maximal relative drift'' as
@@ -29,12 +48,19 @@ On p.~6, source Eq.~(31) gives
 \lesssim 10^{-1}.
 \]
 Appendix C, p.~13, repeats the position-difference definition as (C1).
-Its following sentence defines $x_i(\mathbf x,t)$ as the value of the coordinate
-after a directional translation starting at $\mathbf x$. Thus the omission of
+Its following sentence defines $x_i(\mathbf x,t)$ as
+``the value of $x_i$ after a translation along the $x_i$ axis of time $t$
+starting from the initial position $\mathbf x$''
+(\texttt{Limit.tex}, line 1380). Thus the omission of
 the initial offset is not explained by defining $x_i$ to mean displacement.
 The main text, p.~3, source Eq.~(9), requires
 $\partial_{x_i}F_i=0$ for each directional factor; this is stronger than
 divergence-freeness and is explicitly acknowledged there.
+Primary anchors:
+\href{https://arxiv.org/html/2609.28999v2#S4.E30}{(30)},
+\href{https://arxiv.org/html/2609.28999v2#S4.E31}{(31)},
+\href{https://arxiv.org/html/2609.28999v2#A3.p2}{Appendix C definition};
+source lines 789--825 and 1376--1384.
 
 \subsection{Phase fringe and the claimed precision scale}
 Appendix D.3, p.~14, source Eqs.~(D6)--(D7), gives the probability
@@ -62,6 +88,10 @@ $P_0\sim\cos^2(\langle f\rangle_\rho-m\epsilon+\theta_{\mathrm{err}})$.
 The correction targets that contrast-to-phase inference. It does not deny the
 distinct nonlinear cloud-to-trajectory discrepancy discussed in source
 Section IV.
+Primary anchor:
+\href{https://arxiv.org/html/2609.28999v2#A4.SS3}{Appendix D.3};
+source lines 1568--1607 and 1614--1616. The HTML converter's (68)--(70)
+correspond to PDF (D8)--(D10).
 
 \subsection{Sampling and observable regularity}
 Source Section V, p.~6, defines $f:\Omega\to[0,1]$ and uses
@@ -83,6 +113,9 @@ expansion is
 The regularity counterexample concerns this remainder under the stated
 $C^2$ assumption. It does not challenge the polynomial identities for
 coordinate and squared-coordinate observables.
+Primary anchor:
+\href{https://arxiv.org/html/2609.28999v2#S5.E35}{(35)};
+source lines 888--904 and 912.
 
 \subsection{Ehrenfest--Reynolds calibration}
 On p.~5, source Eqs.~(22)--(25) define
@@ -99,6 +132,10 @@ For its logarithmic Lotka--Volterra example, source Eq.~(45), p.~7, writes
 \]
 The numerical-calibration correction compares that display with the definitions
 above, rather than imposing a different definition of $R$.
+Primary anchors:
+\href{https://arxiv.org/html/2609.28999v2#S4.E22}{definitions beginning at (22)},
+\href{https://arxiv.org/html/2609.28999v2#S6.E45}{(45)};
+source lines 653--674, 690--700 and 1030--1037.
 
 \subsection{Disclosed approximations and preserved conclusions}
 Source Section IV.B, p.~4, explicitly describes approximately Gaussian
@@ -109,3 +146,6 @@ criterion is an arbitrary order-of-magnitude estimate. These disclosures remain
 part of the scope of the source's claims. The present note does not treat them
 as newly discovered omissions. The valid distinction
 $\langle F(X)\rangle\ne F(\langle X\rangle)$ for nonlinear dynamics is retained.
+Primary anchor:
+\href{https://arxiv.org/html/2609.28999v2#S4.SS2}{constant-covariance closure section};
+source lines 561--565 and 631--642.

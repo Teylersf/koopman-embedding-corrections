@@ -236,6 +236,84 @@ def covariance_and_width():
             "all_assertions_passed": True}
 
 
+def complete_flow_uniform_remainder():
+    """Selected coupled-width tests of the proved complete-flow remainder.
+
+    The RK4 outputs are numerical approximations, checked with two internal
+    resolutions. They do not certify an exact continuum solution or a maximum
+    over the whole perturbation ball; the analytic proposition supplies that
+    uniform statement.
+    """
+    def field(points):
+        return np.sin(2 * math.pi * points[:, [1, 0]])
+
+    def evolve(initial, total_time, steps):
+        values = initial.copy()
+        internal_dt = total_time / steps
+        for _ in range(steps):
+            k1 = field(values)
+            k2 = field(values + .5 * internal_dt * k1)
+            k3 = field(values + .5 * internal_dt * k2)
+            k4 = field(values + internal_dt * k3)
+            values += internal_dt * (k1 + 2*k2 + 2*k3 + k4) / 6
+        return values
+
+    center = np.array([.31, .47])
+    angles = 2 * math.pi * np.arange(128) / 128
+    directions = np.column_stack((np.cos(angles), np.sin(angles)))
+    M, J, H_vector = math.sqrt(2), 2 * math.pi, (2 * math.pi)**2
+    K = H_vector * M + J**2
+    gradient_norms = abs(2 * math.pi * np.cos(2 * math.pi * center[[1, 0]]))
+    rows = []
+    for h in (.01, .02, .04):
+        normalized_bound = .5 * K * h*h * math.exp(J*h)
+        for kappa in (.5, 1., 2.):
+            sigma = kappa * h
+            initial = np.vstack((center, center + sigma * directions))
+            coarse = evolve(initial, h, 1024)
+            fine = evolve(initial, h, 2048)
+            endpoint_difference = float(np.max(np.linalg.norm(fine - coarse, axis=1)))
+            assert endpoint_difference < 2e-11
+            first_order = h * (field(initial)[1:] - field(initial)[0])
+            increments = (fine[1:] - initial[1:]) - (fine[0] - initial[0])
+            coarse_increments = (coarse[1:] - initial[1:]) - (coarse[0] - initial[0])
+            remainder = increments - first_order
+            coarse_remainder = coarse_increments - first_order
+            measured = float(np.max(np.linalg.norm(remainder, axis=1)) / sigma)
+            refinement_defect = float(np.max(np.linalg.norm(remainder - coarse_remainder, axis=1)) / sigma)
+            measured_components = np.max(abs(increments), axis=0) / sigma
+            component_bounds = h * gradient_norms + .5 * h * sigma * H_vector + normalized_bound
+            assert measured > 1e-8
+            assert measured < normalized_bound
+            assert refinement_defect < 1e-8
+            assert np.all(measured_components < component_bounds)
+            center_euler_defect = float(np.linalg.norm(fine[0] - center - h * field(center[None, :])[0]))
+            # This full flow has a substantial temporal correction; it is not
+            # the one-generator shear whose increment equality is exact.
+            assert center_euler_defect > h*h
+            rows.append({"h": h, "kappa": kappa, "sigma": sigma,
+                         "sampled_max_R_norm_over_sigma": measured,
+                         "uniform_K_h2_expJh_over_2_bound": normalized_bound,
+                         "measured_over_uniform_bound": measured / normalized_bound,
+                         "R_over_sigma_h_squared": measured / h**2,
+                         "max_endpoint_difference_1024_vs_2048": endpoint_difference,
+                         "normalized_R_refinement_defect": refinement_defect,
+                         "complete_flow_center_Euler_defect": center_euler_defect,
+                         "sampled_component_increment_over_sigma": measured_components.tolist(),
+                         "component_Taylor_plus_temporal_bounds": component_bounds.tolist()})
+    return {"field": "F(q,p)=(sin(2*pi*p),sin(2*pi*q))",
+            "Hamiltonian": "H=-cos(2*pi*p)/(2*pi)+cos(2*pi*q)/(2*pi)",
+            "center": center.tolist(), "boundary_directions": 128,
+            "integration": "Vectorized classical RK4, 1024 and 2048 internal steps per complete-flow trajectory",
+            "global_constants": {"M": M, "J": J, "H_vector_bilinear_bound": H_vector, "K": K},
+            "exact_identity": "R_h(x,delta)=int_0^h int_0^s [G(Phi_r(x+delta))-G(Phi_r(x))] dr ds, G=DF F",
+            "analytic_bound": "||R_h(x,delta)||/sigma <= (H_vector*M+J^2)*h^2*exp(J*h)/2 for ||delta||<=sigma",
+            "coupled_width_scope": "For sigma=kappa*h, curvature and complete-flow temporal terms are both O(h^2) after normalization and both must be retained.",
+            "rows": rows,
+            "scope": "Numerical precision comparison of selected complete-flow perturbations; not exact continuum execution, global reconstruction stability, or a Trotter-error theorem.",
+            "all_assertions_passed": True}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT / 'results/verification.json')
@@ -246,7 +324,8 @@ def main():
     checks = {"geometric_criterion": geometry(), "phase_and_sampling": phase_and_sampling(),
               "single_frequency_nonidentifiability": nonidentifiability(),
               "LV_calibration": lv_calibration(), "C2_remainder": regularity(),
-              "covariance_and_width": covariance_and_width()}
+              "covariance_and_width": covariance_and_width(),
+              "complete_flow_uniform_remainder": complete_flow_uniform_remainder()}
     result = {"source_version": "arXiv:2609.28999v2", "source_pdf_sha256": SOURCE_SHA256,
               "python_version": platform.python_version(), "numpy_version": np.__version__,
               "scope": "Selected corrections, exact finite-grid algebra and analytic examples; no exhaustive audit, quantum hardware result, or speedup claim.",

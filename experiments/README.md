@@ -14,7 +14,7 @@ python -X utf8 experiments/verify.py
 python -X utf8 experiments/make_figures.py
 ```
 
-`verify.py` runs six groups and writes `results/verification.json` plus an
+`verify.py` runs seven groups and writes `results/verification.json` plus an
 authentic author-environment execution record in `results/execution.log`.
 The latter records the environment, script hash, assertion status, output hash,
 and complete JSON. It is not independent human review or certification.
@@ -36,6 +36,9 @@ The groups cover:
 6. Supporting covariance-transpose, dimension-constant, and width-normalization
    inconsistencies. The larger main-text constant repairs the matrix bound;
    this example does not refute every main-text estimate.
+7. A nontrivial complete conservative flow with packet width proportional to
+   the time step. Vectorized RK4 refinement checks the numerical calculation;
+   the width-uniform remainder estimate is proved separately in the paper.
 
 All inputs are analytic or declared finite grids. No external dataset,
 original-paper PDF, local account, network access, or other project directory

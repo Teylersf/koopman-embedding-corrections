@@ -27,6 +27,7 @@ Same-fringe arithmetic-mean gap & $%.10f$ & $4\eta(ac-b)$\\
 Lotka--Volterra $R/\sigma$ & %.10f & $1/\sqrt2$\\
 $C^2$ cubic-moment coefficient & %.10f & $2\sqrt{2/\pi}$\\
 Dense covariance norm, $t=0.1$ & %.10f & appendix bound %.10f\\
+Bound with main-text $L$ & %.10f & holds in this example\\
 \bottomrule
 \end{tabular}
 \caption{Selected deterministic checks. Phase error is floating-point rounding.
@@ -37,7 +38,7 @@ in the checked JSON and execution log.}
 \end{table}
 ''' % (geometry['raw_Eq31_ratio'], geometry['corrected_displacement_ratio'],
        bias_latex, pair['mean_difference'], lv['R_over_sigma_from_Eqs22_25'],
-       c['C2_remainder']['untruncated_coefficient'], dense['actual_covariance_norm'], dense['appendix_bound'])
+       c['C2_remainder']['untruncated_coefficient'], dense['actual_covariance_norm'], dense['appendix_bound'], dense['main_L_bound'])
 (ROOT / 'paper/results-table.tex').write_text(table, encoding='utf-8', newline='\n')
 
 commit = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
@@ -67,7 +68,7 @@ python -X utf8 experiments/verify.py
 python -X utf8 experiments/make_figures.py
 \end{Verbatim}
 The source and result hashes below identify the exact executed files. All
-six check groups completed with exit status zero. This is an author-environment
+seven check groups completed with exit status zero. This is an author-environment
 execution record, not a third-party certification. The complete log and JSON
 are included in the repository and release archive; the numerical table and
 explicit constructions make the main claims inspectable within this paper.

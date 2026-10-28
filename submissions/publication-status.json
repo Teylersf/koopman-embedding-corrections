@@ -2,44 +2,56 @@
   "study": "Geometric stability and observable inference in dual Koopman-von Neumann embeddings: Corrections and reproducible counterexamples",
   "canonical_author": "Taylor Kalin",
   "canonical_repository": "https://github.com/Teylersf/koopman-embedding-corrections",
-  "status": "publishing",
+  "status": "blocked_external_review_failure",
   "review_sequence": "GitHub and AiraXiv preprint, Publish.fun review, then AgentPub and AAES after the Publish.fun review closes",
   "platforms": {
     "github": {
       "status": "published",
       "url": "https://github.com/Teylersf/koopman-embedding-corrections",
-      "release": "https://github.com/Teylersf/koopman-embedding-corrections/releases/tag/v1.1.0",
-      "version": "1.1.0",
+      "release": "https://github.com/Teylersf/koopman-embedding-corrections/releases/tag/v1.1.1",
+      "version": "1.1.1",
       "release_status": "published"
     },
     "airaxiv": {
       "public_id": "2610.0108",
-      "submission_id": "1264",
+      "submission_id": "1265",
       "status": "published_preprint",
       "url": "https://airaxiv.com/papers/view/2610.0108/",
-      "pdf_sha256": "e54f0d0ada730b45bbcd987c94523b1c9a987fb96a12f758ecea2f37dd6679b3",
+      "pdf_sha256": "95532ac28049f4448be751b964fdfad7288744a2702038a0b64a5c05f546f9f4",
       "matches_canonical_pdf": true,
       "canonical_author": "Taylor Kalin",
-      "public_version": 3
+      "public_version": 4,
+      "canonical_version": "1.1.1"
     },
     "publishfun": {
-      "status": "under_review",
+      "status": "failed",
       "round": 2,
       "id": "p_5gL1NwHZWxPNHnyW",
       "account_status_url": "https://publish.fun/dashboard/papers/p_5gL1NwHZWxPNHnyW",
-      "editorial_state": "active"
+      "editorial_state": "active",
+      "reviewed_manuscript_version": "1.1.0",
+      "failure_reason": "Reviewer panel incomplete; awaiting ~z-ai/glm-latest, qwen/qwen3.8-max-0902",
+      "editorial_decision_for_round_2": null,
+      "recovery_email_sent_at_utc": "2026-10-28T22:28:03.000Z",
+      "recovery_recipient": "publisher@publish.fun"
     },
     "agentpub": {
-      "status": "not_yet_submitted",
-      "agent_byline": "Lattice Audit Agent",
-      "human_operator": "Taylor Kalin"
-    },
-    "aaes": {
-      "status": "not_yet_submitted",
+      "status": "prepared_not_submitted",
       "agent_byline": "Lattice Audit Agent",
       "human_operator": "Taylor Kalin",
-      "prepared_repository": "https://github.com/Teylersf/koopman-embedding-agent-publication"
+      "package_version": "1.1.1",
+      "reason": "Publish.fun editorial record remains active after a review-pipeline failure; awaiting recovery or confirmation that review elsewhere may proceed.",
+      "preflight_passed": true
+    },
+    "aaes": {
+      "status": "prepared_not_submitted",
+      "agent_byline": "Lattice Audit Agent",
+      "human_operator": "Taylor Kalin",
+      "prepared_repository": "https://github.com/Teylersf/koopman-embedding-agent-publication",
+      "package_version": "1.1.1",
+      "reason": "Publish.fun editorial record remains active after a review-pipeline failure; awaiting recovery or confirmation that review elsewhere may proceed."
     }
   },
-  "checked_at_utc": "2026-10-28T22:00:21.219191+00:00"
+  "checked_at_utc": "2026-10-28T22:29:23.845091+00:00",
+  "canonical_version": "1.1.1"
 }

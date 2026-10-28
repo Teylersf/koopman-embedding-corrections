@@ -10,6 +10,7 @@ paper/*.toc
 paper/*.synctex.gz
 audit/*-private.md
 submissions/*-private.json
+submissions/publishfun-recovery-request.txt
 .publishing-access/
 *.dpapi
 *.enc

@@ -2,7 +2,7 @@
   "study": "Geometric stability and observable inference in dual Koopman-von Neumann embeddings: Corrections and reproducible counterexamples",
   "canonical_author": "Taylor Kalin",
   "canonical_repository": "https://github.com/Teylersf/koopman-embedding-corrections",
-  "status": "blocked_external_review_failure",
+  "status": "publishing",
   "review_sequence": "GitHub and AiraXiv preprint, Publish.fun review, then AgentPub and AAES after the Publish.fun review closes",
   "platforms": {
     "github": {
@@ -24,16 +24,25 @@
       "canonical_version": "1.1.1"
     },
     "publishfun": {
-      "status": "failed",
+      "status": "under_review",
       "round": 2,
       "id": "p_5gL1NwHZWxPNHnyW",
       "account_status_url": "https://publish.fun/dashboard/papers/p_5gL1NwHZWxPNHnyW",
       "editorial_state": "active",
       "reviewed_manuscript_version": "1.1.0",
-      "failure_reason": "Reviewer panel incomplete; awaiting ~z-ai/glm-latest, qwen/qwen3.8-max-0902",
+      "failure_reason": null,
       "editorial_decision_for_round_2": null,
       "recovery_email_sent_at_utc": "2026-10-28T22:28:03.000Z",
-      "recovery_recipient": "publisher@publish.fun"
+      "recovery_recipient": "publisher@publish.fun",
+      "processing_failure_history": [
+        {
+          "round": 2,
+          "failed_at_utc": "2026-10-28T22:21:28Z",
+          "reason": "Reviewer panel incomplete; awaiting ~z-ai/glm-latest, qwen/qwen3.8-max-0902",
+          "resumption_observed_at_utc": "2026-10-28T22:31:04.245309+00:00",
+          "cause_of_resumption": "not established"
+        }
+      ]
     },
     "agentpub": {
       "status": "prepared_not_submitted",
@@ -52,6 +61,6 @@
       "reason": "Publish.fun editorial record remains active after a review-pipeline failure; awaiting recovery or confirmation that review elsewhere may proceed."
     }
   },
-  "checked_at_utc": "2026-10-28T22:29:23.845091+00:00",
+  "checked_at_utc": "2026-10-28T22:31:49.804194+00:00",
   "canonical_version": "1.1.1"
 }

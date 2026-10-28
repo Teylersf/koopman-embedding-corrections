@@ -1,0 +1,47 @@
+\section{Pinned execution evidence}
+\label{sec:execution}
+The numerical code and checked results are pinned to Git commit
+\begin{quote}\small\ttfamily
+b8f3100e8360510e956edc4b77b1ba61bf8d6094
+\end{quote}
+in the repository
+\url{https://github.com/Teylersf/koopman-embedding-corrections}.
+This is the code snapshot; the publication commit additionally contains the
+finished manuscript and PDF. To reproduce the numerical values:
+\begin{Verbatim}[fontsize=\small]
+git clone https://github.com/Teylersf/koopman-embedding-corrections.git
+cd koopman-embedding-corrections
+git checkout b8f3100e8360510e956edc4b77b1ba61bf8d6094
+python -m pip install -r requirements.txt
+python -X utf8 experiments/verify.py
+python -X utf8 experiments/make_figures.py
+\end{Verbatim}
+The source and result hashes below identify the exact executed files. All
+six check groups completed with exit status zero. This is an author-environment
+execution record, not a third-party certification. The complete log and JSON
+are included in the repository and release archive; the numerical table and
+explicit constructions make the main claims inspectable within this paper.
+\begin{Verbatim}[fontsize=\scriptsize]
+AUTHOR-ENVIRONMENT EXECUTION RECORD
+Deterministic classical checks, not independent human peer review or third-party certification.
+Command: python -X utf8 experiments/verify.py
+Started UTC: 2026-10-28T21:25:55.827272+00:00
+Python: 3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]
+Platform: win32
+NumPy: 2.3.5
+Script SHA-256:
+  d31f8924db3cfd234806f615e82357c0
+  c8e89b191041363676e62502a0056add
+PASS: geometric_criterion
+PASS: phase_and_sampling
+PASS: single_frequency_nonidentifiability
+PASS: LV_calibration
+PASS: C2_remainder
+PASS: covariance_and_width
+All assertions passed: true
+Exit status: 0
+Verification JSON SHA-256:
+  17368c8586be78a587793e40914ed995
+  f0c0f3cc0296b3b52e6fa5341e8286df
+Elapsed seconds: 0.016653
+\end{Verbatim}

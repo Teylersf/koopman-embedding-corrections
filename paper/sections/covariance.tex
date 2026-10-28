@@ -1,0 +1,53 @@
+\section{Covariance and width-normalization repairs}
+\label{sec:covariance}
+These supporting corrections concern the source's Appendix B.2 and its
+Eq.~(41). They do not replace a complete covariance theorem for the nonlinear
+flow.
+
+For a linear deviation equation $\dot Y=JY$, the second-moment matrix
+$C=\E{YY^\top}$ satisfies exactly
+\begin{equation}
+ \dot C=JC+CJ^\top.
+ \label{eq:true-covariance}
+\end{equation}
+The source prints $JC+CJ$ with $J_{ij}=\partial_jF_i$. A covariance derivative
+must be symmetric, and the printed expression need not be. For example,
+\begin{equation}
+ J=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\quad
+ C=\begin{pmatrix}4&0\\0&1\end{pmatrix}
+\end{equation}
+gives
+\begin{equation}
+ JC+CJ^\top=\begin{pmatrix}0&-3\\-3&0\end{pmatrix},\qquad
+ JC+CJ=\begin{pmatrix}0&5\\-5&0\end{pmatrix}.
+\end{equation}
+This linear Hamiltonian example isolates the transpose issue with no nonlinear
+closure remainder. These displayed matrices are dimensionless algebra
+examples. Multiplying $C$ by $\epsilon^2$, for example with $\epsilon=0.01$,
+preserves the contradiction while making it a localized covariance in the
+unit box. Centered bounded data realize that covariance; short trajectories
+can be confined to the same chart. The correct norm estimate is
+\begin{equation}
+ \norm{\dot C}_F\leq2\norm{J}_2\norm C_F.
+\end{equation}
+If $r=\max_i\norm{\nabla F_i}_2$, the general row estimate is
+$\norm J_2\leq\norm J_F\leq\sqrt d\,r$. The source's main definition
+$L=\sqrt d\,r$ supplies this factor; its Appendix B.2 redefinition omits it.
+The same appendix also moves the inner index sum outside the square in the
+displayed expansion of $\norm{JC}_F^2$, discarding cross terms. The
+implementation includes a dense four-dimensional Hamiltonian example that
+checks this distinction. Using the main-text $L$ repairs the elementary
+matrix estimate, so the example is not presented as a counterexample to every
+main-text covariance bound.
+
+Finally, source Eq.~(41) identifies
+$\sqrt{\norm{\Sigma^{1/2}}_F}$ with $\sigma_F$. Under the explicit isotropic
+test $\Sigma=\sigma^2I$, these quantities are respectively
+$d^{1/4}\sqrt\sigma$ and $\sigma$. The width defined in source Eq.~(23) is
+instead
+\begin{equation}
+ \sigma_F=\left(\frac{\norm\Sigma_F}{\sqrt d}\right)^{1/2}.
+\end{equation}
+Correcting this identity is necessary before using that displayed formula to
+balance a measurement error with the packet's localization scale. It does
+not create a universal lower bound on the accuracy of measuring a mean.

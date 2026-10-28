@@ -1,0 +1,54 @@
+\section{Calibration of the Lotka--Volterra example}
+\label{sec:calibration}
+The source's Eq.~(22) defines
+\begin{equation}
+ L=\sqrt d\max_i\sup_{x\in\Omega}\norm{\nabla F_i(x)}_2,
+ \qquad H=\sqrt d\max_i\sup_{x\in\Omega}\norm{D^2 F_i(x)}_F.
+ \label{eq:source-LH}
+\end{equation}
+Its effective width and parameter, source Eqs.~(23), (25), are
+\begin{equation}
+ \sigma_F^2=\frac{\norm{\Sigma}_F}{\sqrt d},\qquad
+ R=\frac{\sqrt d\,\sigma_F H}{2L}.
+ \label{eq:source-R}
+\end{equation}
+For $\Sigma=\sigma^2 I$, the definition gives $\sigma_F=\sigma$.
+The logarithmic Lotka--Volterra coordinates in the source give
+\begin{equation}
+ F_q(q,p)=-\alpha+\beta e^{-p},\qquad
+ F_p(q,p)=\delta-\gamma e^{-q}.
+ \label{eq:LV-field}
+\end{equation}
+The Euclidean norm of each row gradient equals the Frobenius norm of its
+row Hessian at every point:
+\begin{equation}
+ \norm{\nabla F_q}_2=\norm{D^2F_q}_F=\beta e^{-p},\qquad
+ \norm{\nabla F_p}_2=\norm{D^2F_p}_F=\gamma e^{-q}.
+\end{equation}
+Consequently $H=L$ on any common domain used in
+Eq.~\eqref{eq:source-LH}, and for this two-dimensional example
+\begin{equation}
+ \frac R\sigma=\frac{1}{\sqrt2}=0.7071067812\ldots.
+ \label{eq:correct-R}
+\end{equation}
+This differs from the source's Eq.~(45), which states
+$R/\sigma=\gamma/\beta=2.29$. The inconsistency is with the displayed
+definitions, independent of whether the common supremum is evaluated globally
+or the same rowwise maxima are evaluated locally. With the source parameters
+$\beta=e^{-1/3}$, $\gamma=e^{1/2}$, the ratio $\gamma/\beta$ is actually
+$2.300975891\ldots$; that small decimal discrepancy is secondary to using the
+wrong ratio. At $\sigma=0.01$, Eq.~\eqref{eq:correct-R} gives
+$R=0.0070710678\ldots$, instead of $0.0229$.
+
+Both values are small, so this calculation does not overturn the qualitative
+success of that example. It changes the numerical calibration offered as
+evidence for the proposed criterion. It also prevents interpreting the
+reported value as a direct evaluation of the stated $L,H,\sigma_F$ definitions.
+
+The paper's recommendation of roughly ten grid points across a packet width
+is explicitly an order-of-magnitude numerical choice. We do not turn that
+choice into a sharp theorem or claim a benchmark fails solely because a
+chosen width spans fewer cells. The mismatched width annotations and
+left/right panel descriptions in source Fig.~4 are documented in the audit
+ledger as reproducibility and editorial issues, separate from the algebraic
+calibration error.

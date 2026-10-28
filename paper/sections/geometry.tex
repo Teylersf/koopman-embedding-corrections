@@ -1,0 +1,139 @@
+\section{Initial separation and the geometric criterion}
+\label{sec:geometry}
+
+Let $\Phi_h$ denote a flow map for $h\geq0$, and let
+$B^d=\{\xi\in\R^d:\norm{\xi}_2\leq1\}$. Write $\sigma$ for the
+effective width $\sigma_F$ in the source's geometric definition.
+Work in a coordinate chart in which $B(x,\sigma)$ and the short trajectories
+considered below remain inside the domain, so coordinate wrapping is absent.
+The maximal relative drift in source Eq.~(30), p.~5, is
+\begin{equation}
+ D_i^{\rm raw}(h;x,\sigma)
+ :=\max_{\xi\in B^d}
+ \left|\Phi_h(x+\sigma\xi)_i-\Phi_h(x)_i\right|.
+ \label{eq:raw-separation}
+\end{equation}
+It is a separation of final positions. Source Eq.~(30) then identifies it with
+$h\max_{\xi\in B^d}|F_i(x+\sigma\xi)-F_i(x)|+O(h^2)$.
+That identification drops the separation already present at time zero.
+Indeed, a uniform short-time flow expansion gives
+\begin{equation}
+ \Phi_h(x+\sigma\xi)_i-\Phi_h(x)_i
+ =\sigma\xi_i+h\bigl(F_i(x+\sigma\xi)-F_i(x)\bigr)+O(h^2).
+ \label{eq:flow-offset}
+\end{equation}
+For fixed $\sigma>0$, the first term cannot be included in an $O(h^2)$
+remainder. In particular, $D_i^{\rm raw}(0;x,\sigma)=\sigma$.
+
+\begin{proposition}[Obstruction for the stated directional maps]
+\label{prop:raw-obstruction}
+Suppose $\partial_iF_i=0$ on the relevant neighborhood. The directional
+flow used in a Trotter substep is exactly
+\begin{equation}
+ \Phi_h^{(i)}(x)=x+hF_i(x)e_i.
+ \label{eq:directional-map}
+\end{equation}
+If $D_i^{\rm raw}$ is evaluated using this map, then
+$D_i^{\rm raw}\geq\sigma$. Consequently, if each component in source
+Eq.~(31) is evaluated using its corresponding directional substep,
+\begin{equation}
+ \frac{\bigl(\sum_{i=1}^d(D_i^{\rm raw})^2\bigr)^{1/2}}
+ {\sqrt d\,\sigma}\geq1.
+ \label{eq:ratio-obstruction}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Choose $\xi=e_i$ in \eqref{eq:raw-separation}. The coefficient does not
+change under this perturbation because it is independent of coordinate
+$i$. Hence
+$\Phi_h^{(i)}(x+\sigma e_i)_i-\Phi_h^{(i)}(x)_i=\sigma$.
+Taking the maximum proves the componentwise bound and summing proves
+\eqref{eq:ratio-obstruction}. Centers at different intermediate substeps
+do not change the argument, provided their neighborhoods remain in the chart.
+\end{proof}
+
+Thus the approximately $0.1$ condition printed in source Eq.~(31) cannot
+hold under the directional-map interpretation given in its geometric
+discussion. If the intended map were instead the complete flow, the
+time-zero contradiction in \eqref{eq:flow-offset} would still remain:
+the normalized raw separation tends to $1$, rather than $0$, as $h\to0$.
+
+This obstruction occurs for a genuinely nonlinear conservative field. Set
+\begin{equation}
+ F(q,p)=(\sin(2\pi p),0),\qquad
+ H(q,p)=-\frac{\cos(2\pi p)}{2\pi}.
+ \label{eq:nonlinear-shear}
+\end{equation}
+Then $\dot q=\partial_pH$, $\dot p=-\partial_qH$, and
+$\Phi_h(q,p)=(q+h\sin(2\pi p),p)$. Both own-coordinate derivatives
+vanish. A packet with means $(1/2,1/2)$ and a $p$ marginal symmetric
+about $1/2$ has $\E{\sin(2\pi P)}=0$. Its mean therefore remains at the
+fixed-point trajectory $(1/2,1/2)$, exactly, on any interval without
+coordinate wrapping. A smooth compactly supported symmetric packet can
+ensure this condition. The printed geometric condition nevertheless fails.
+This example concerns the geometric condition; its covariance need not
+remain constant, and no constant-covariance error theorem is invoked.
+
+\subsection{A corrected displacement quantity}
+An explicit repair is to compare the increments, subtracting the initial
+separation inside the absolute value:
+\begin{equation}
+ D_i^{\rm inc}(h;x,\sigma):=
+ \max_{\xi\in B^d}\left|
+ [\Phi_h(x+\sigma\xi)-(x+\sigma\xi)]_i
+ -[\Phi_h(x)-x]_i\right|.
+ \label{eq:increment-distortion}
+\end{equation}
+For the exact directional map \eqref{eq:directional-map},
+\begin{equation}
+ D_i^{\rm inc}
+ =h\max_{\xi\in B^d}|F_i(x+\sigma\xi)-F_i(x)|.
+ \label{eq:increment-exact}
+\end{equation}
+This equality has no time-discretization remainder. It uses the
+own-coordinate condition and is specific to a directional substep.
+
+\begin{proposition}[Local increment bound]
+\label{prop:increment-bound}
+Assume $F_i\in C^2$ on $B(x,\sigma)$ and use the directional map
+\eqref{eq:directional-map}. Then
+\begin{equation}
+ \frac{D_i^{\rm inc}}{\sigma}
+ \leq h\norm{\nabla F_i(x)}_2+
+ \frac{h\sigma}{2}
+ \sup_{y\in B(x,\sigma)}\norm{D^2F_i(y)}_{\rm op}.
+ \label{eq:increment-bound}
+\end{equation}
+If $F_i\in C^3$ and its third derivative has operator norm at most $M_3$
+on the ball, the supremum-Hessian term may instead be replaced by
+\begin{equation}
+ \frac{h\sigma}{2}\norm{D^2F_i(x)}_{\rm op}
+ +\frac{h\sigma^2M_3}{6}.
+ \label{eq:increment-third-order}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply the one-dimensional Taylor formula along the segment
+$s\mapsto x+s\sigma\xi$. The linear term has absolute value at most
+$\sigma\norm{\nabla F_i(x)}_2$ and the integral quadratic remainder is
+at most $\sigma^2\sup\norm{D^2F_i}_{\rm op}/2$.
+Substitute in \eqref{eq:increment-exact}. Expanding one order further gives
+\eqref{eq:increment-third-order}.
+\end{proof}
+
+For a complete smooth flow, \eqref{eq:increment-exact} has an additional
+uniform $O(h^2)$ term on a fixed neighborhood. After division by $\sigma$
+this is $O(h^2/\sigma)$; a joint small-width, small-step limit requires
+additional control. It must not be discarded as a grid-uniform statement.
+
+The two terms in \eqref{eq:increment-bound} separate linear stretching
+from local curvature. Increment distortion itself can be nonzero for an
+affine field, even though averaging then follows the exact trajectory.
+If only the nonlinear part is desired, one can further subtract
+$h\sigma\nabla F_i(x)\cdot\xi$ inside \eqref{eq:increment-distortion}; its
+normalized magnitude is bounded by the Hessian term alone.
+These are standard local Taylor estimates. They repair the definition and
+expose its assumptions; they do not establish a new universal
+Ehrenfest--Reynolds threshold or a global trajectory-accuracy theorem.

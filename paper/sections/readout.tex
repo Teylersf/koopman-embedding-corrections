@@ -1,0 +1,180 @@
+\section{Phase fringes, arithmetic means, and sampling}
+\label{sec:readout}
+
+The source already contains a direct encoding of the mean of a bounded
+observable in Eqs.~(32)--(34). A separate phase-reference procedure in
+Appendix~D.3 requires a different analysis. We take its probability in
+source Eq.~(D6) as the starting point, avoiding the missing affine
+probability conversion in source Eq.~(37).
+
+\subsection{The exact statistic measured by a reference scan}
+Let $\Theta$ be the real observable encoded in the phase and let $a$ be
+the reference angle. On either a finite probability grid or a continuum
+probability space, define
+\begin{equation}
+ P(a):=\E{\cos^2(\Theta-a)},\qquad z:=\E{e^{2i\Theta}}.
+ \label{eq:phase-statistic}
+\end{equation}
+The finite-grid formula is exact, with the probabilities summing to one;
+no Riemann-sum approximation is required for the following statements.
+
+\begin{proposition}[Exact phase-reference fringe]
+\label{prop:fringe}
+For every real $a$,
+\begin{equation}
+ P(a)=\frac12+\frac12\operatorname{Re}(e^{-2ia}z).
+ \label{eq:exact-fringe}
+\end{equation}
+If $z\ne0$, its maximizing reference satisfies
+$a_*=\tfrac12\arg z\pmod\pi$, and its contrast is $|z|$.
+This circular mean generally differs from $\E{\Theta}$.
+\end{proposition}
+
+\begin{proof}
+Use $\cos^2u=(1+\cos2u)/2$ and linearity of expectation.
+Writing $z=|z|e^{i\varphi}$ gives
+$P(a)=1/2+(|z|/2)\cos(\varphi-2a)$, proving the assertion.
+\end{proof}
+
+Source Eq.~(D8) correctly displays variance as a leading reduction of the
+fringe amplitude. The paragraph after source Eq.~(D10), p.~15, then
+introduces $\cos(2\theta_{\rm err})=1-2\operatorname{Var}(\Theta)$ and
+uses an additive shift in a squared cosine. Multiplying a cosine's
+amplitude and shifting its argument are different operations: a fixed
+shift generally introduces an odd component about the original peak.
+Equation~\eqref{eq:exact-fringe} identifies the relevant quantities without
+this substitution.
+
+\begin{corollary}[Positive variance without phase bias]
+\label{cor:symmetric-no-bias}
+If $Y:=\Theta-\mu$ has a symmetric distribution and
+$C:=\E{\cos2Y}>0$, then
+\begin{equation}
+ P(a)=\frac12+\frac C2\cos[2(\mu-a)],\qquad a_*=\mu\pmod\pi.
+ \label{eq:symmetric-fringe}
+\end{equation}
+The conclusion holds even when $\operatorname{Var}(\Theta)>0$.
+\end{corollary}
+
+\begin{proof}
+Symmetry gives $\E{\sin2Y}=0$, hence $z=e^{2i\mu}C$.
+Apply Proposition~\ref{prop:fringe}.
+\end{proof}
+
+For the ideal Gaussian $\Theta\sim N(\mu,\sigma^2)$ on $\R$,
+$C=e^{-2\sigma^2}$. A symmetric truncated Gaussian on
+$[\mu-b,\mu+b]$ with $b<\pi/4$ also has $C>0$, since $\cos2Y>0$
+throughout its support. The same result holds exactly for symmetric
+finite-grid weights. Thus the counterexample does not depend on an
+unbounded phase-space domain. A reference interval of length less than
+$\pi$ containing $\mu$ fixes the relevant branch of the maximum.
+Nonzero variance reduces contrast but does not impose a nonzero phase
+bias in this family. With increasing samples the maximum can be located
+arbitrarily accurately; reduced contrast affects the resources required.
+
+The origin of a phase displacement can also be isolated locally. If
+$\Theta=\mu+sZ$, $\E{Z}=0$, and $\E{|Z|^5}<\infty$, Taylor expansion of
+$\E{e^{2isZ}}$ on the branch near $1$ yields
+\begin{equation}
+ a_* =\mu-\frac23s^3\E{Z^3}+O(s^5),\qquad s\to0.
+ \label{eq:phase-asymmetry}
+\end{equation}
+Here $\mu$ is fixed, and $Z$ has a fixed distribution with the stated
+moments. The second moment changes the real part at order $s^2$;
+the leading imaginary part is $-4s^3\E{Z^3}/3$.
+This is a moment expansion of the exact fringe, not a general claim that
+all nonlinear inference biases begin at the same order.
+
+\subsection{A fixed-frequency fringe need not identify the arithmetic mean}
+The positive-variance counterexample disproves a mandatory phase-bias
+floor. Conversely, it does not make the circular mean a valid arithmetic
+mean estimator for arbitrary packets. A complete scan of $a$ in
+\eqref{eq:exact-fringe} determines only the one complex moment $z$.
+
+\begin{proposition}[Same entire fringe, different arithmetic means]
+\label{prop:nonidentifiable}
+There exist strictly positive probability weights on four binary-grid
+points in $[0,1]$ with identical $P(a)$ for every $a$ and different
+arithmetic means.
+\end{proposition}
+
+\begin{proof}
+Choose $\mu=1/2$, $a=1/8$, $b=1/16$, and the ordered support
+$x=(\mu-a,\mu-b,\mu+b,\mu+a)$.
+Set $c=\sin(2b)/\sin(2a)$, $v=(-c,1,-1,c)$, and
+\begin{equation}
+ p_j^{\pm}=\frac14\pm\eta v_j,\qquad 0<\eta<\frac14.
+ \label{eq:four-point-weights}
+\end{equation}
+Since $0<c<1$, these weights are positive. Moreover,
+\begin{equation}
+ \sum_jv_j=0,\qquad
+ \sum_jv_je^{2ix_j}=2ie^{2i\mu}
+       \bigl(c\sin(2a)-\sin(2b)\bigr)=0.
+ \label{eq:four-point-null}
+\end{equation}
+The two distributions therefore have the same normalization and the
+same $z$. Their means differ by
+\begin{equation}
+ \sum_j(p_j^+-p_j^-)x_j=4\eta(ac-b)>0.
+ \label{eq:four-point-means}
+\end{equation}
+The strict inequality follows because $\sin t/t$ is decreasing for
+$0<t<\pi/2$, so $c>b/a$.
+\end{proof}
+
+At $\eta=0.1$ the mean separation is approximately
+$1.9659219701\times10^{-4}$. All four support points lie on a
+$16$-point binary grid. This is an identifiability statement for the
+fixed-frequency reference-fringe family. It is not an impossibility
+theorem for algorithms that encode a different function, obtain other
+Fourier moments, or measure additional information from the state.
+
+\subsection{Direct mean encoding and its resource assumptions}
+Let a state have grid probabilities $p_x$, and let $0\leq f(x)\leq1$.
+The Hadamard circuit with diagonal phase
+$\vartheta(x)=2\arccos\sqrt{f(x)}$ gives ancilla-zero amplitudes
+$\sqrt{p_x}(1+e^{i\vartheta(x)})/2$. Therefore its probability is exactly
+\begin{equation}
+ p_f=\sum_xp_x\cos^2\!\left(\frac{\vartheta(x)}2\right)
+     =\sum_xp_xf(x)=\E{f(X)}.
+ \label{eq:direct-mean-probability}
+\end{equation}
+This is the source's own Eqs.~(32)--(34), read as a finite-grid identity.
+Standard amplitude estimation can estimate this encoded probability
+with additive accuracy using $O(\epsilon^{-1})$ coherent queries at fixed
+success probability \cite{bhmt,aaronsonrall}; more general observable
+estimation is also established \cite{rall}. These are query statements
+requiring appropriate coherent state preparation, inverse operations,
+reflections, and accurate observable encoding. Their gate costs and
+state-preparation success costs remain to be counted. No new amplitude
+estimation algorithm or end-to-end quantum speedup is claimed here.
+
+\subsection{Two sampling experiments have different variances}
+The measurement-cost prefactor in source Sec.~V, p.~6, is written in
+terms of the packet covariance. For an ancilla trial $Y\in\{0,1\}$
+with success probability $p_f$, however, independent trials give
+\begin{equation}
+ \operatorname{Var}\!\left(\frac1M\sum_{m=1}^MY_m\right)
+ =\frac{p_f(1-p_f)}{M}.
+ \label{eq:ancilla-variance}
+\end{equation}
+If instead one samples the coordinate $X$ directly in the computational
+basis, its sample mean has variance $\operatorname{Var}(X)/M$.
+These statements concern different recorded random variables.
+For $f(X)=X$ and any distribution on $[0,1]$ symmetric about $1/2$,
+$p_f=1/2$ and the ancilla variance per shot is $1/4$, irrespective of
+the coordinate variance. A narrow Gaussian packet can have arbitrarily
+small coordinate variance without making these ancilla outcomes less
+random. Source Appendix~D.1 analyzes direct Gaussian samples, while
+Appendix~D.2 separately gives the Bernoulli variance factor. The former
+cannot be transferred as the prefactor of the latter circuit.
+
+The inverse-square accuracy exponent for ordinary independent sampling
+survives this correction. For example, Hoeffding's inequality for the
+ancilla sample mean gives failure probability at most
+$2e^{-2M\epsilon^2}$. The correction concerns the measured variable and
+its variance prefactor, rather than a refutation of standard sampling or
+amplitude-estimation scaling. Finally, estimating the actual packet mean
+accurately does not remove the separate difference between that mean
+and the nonlinear trajectory launched at its initial center.

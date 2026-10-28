@@ -1,0 +1,111 @@
+\section{Targeted source passages and version scope}
+\label{app:source-evidence}
+
+All locators in this appendix refer to the PDF of
+arXiv:2609.28999v2~\cite{original}, not the HTML converter's appendix numbering.
+The 17-page supplied PDF is byte-identical to a fresh versioned arXiv download:
+959,353 bytes, with SHA-256
+\texttt{f895d195c935bcc9e3d0b14d2499f59aa}\\
+\texttt{497b8fcdce7d69f13fbc74d10301add}.
+The official record checked on 28 October 2026 lists v2, revised
+25 September 2026, and no journal reference. The following transcriptions were
+checked against rendered PDF pages. No persistence claim is made for an
+unexamined revision or version of record.
+
+\subsection{Geometric definition and criterion}
+On PDF p.~5, source Eq.~(30) defines the ``maximal relative drift'' as
+\begin{align*}
+\Delta_{\sigma_F}x_i
+&:=\max_{\boldsymbol\xi\in B^d}
+\left|x_i(\mathbf x+\sigma_F\boldsymbol\xi,\Delta t)
+             -x_i(\mathbf x,\Delta t)\right|\\
+&=\Delta t\max_{\boldsymbol\xi\in B^d}
+\left|F_i(\mathbf x+\sigma_F\boldsymbol\xi)-F_i(\mathbf x)\right|
++O(\Delta t^2).
+\end{align*}
+On p.~6, source Eq.~(31) gives
+\[
+\frac{\sqrt{\sum_i(\Delta_{\sigma_F}x_i)^2}}{\sqrt d\,\sigma_F}
+\lesssim 10^{-1}.
+\]
+Appendix C, p.~13, repeats the position-difference definition as (C1).
+Its following sentence defines $x_i(\mathbf x,t)$ as the value of the coordinate
+after a directional translation starting at $\mathbf x$. Thus the omission of
+the initial offset is not explained by defining $x_i$ to mean displacement.
+The main text, p.~3, source Eq.~(9), requires
+$\partial_{x_i}F_i=0$ for each directional factor; this is stronger than
+divergence-freeness and is explicitly acknowledged there.
+
+\subsection{Phase fringe and the claimed precision scale}
+Appendix D.3, p.~14, source Eqs.~(D6)--(D7), gives the probability
+\[
+P_0(a)=\left\langle\cos^2(\theta-a)\right\rangle_\rho
+=\frac12+\frac12\left\langle\cos\bigl(2(\theta-a)\bigr)
+\right\rangle_\rho+O(2^{-n}).
+\]
+Here the expectation identity is exact on the discrete distribution; the
+displayed $O(2^{-n})$ concerns comparison with a continuum integral.
+The source's next expansion, (D8), is
+\begin{align*}
+P_0(a)={}&\frac12+\frac12\cos\bigl(2(\langle\theta\rangle_\rho-a)\bigr)
+\bigl(1-2\operatorname{Var}_\rho(\theta)\bigr)\\
+&+O\!\left(\left\langle
+|\theta-\langle\theta\rangle_\rho|^3\right\rangle_\rho\right).
+\end{align*}
+After (D10), p.~15, the prose states that the precision is
+``at best $\operatorname{Var}_\rho(\theta)$'' and assigns the scale
+$O(\|\Sigma\|\,\|D^2\theta\|)$.
+It introduces
+$\cos(2\theta_{\mathrm{err}})=1-2\operatorname{Var}_\rho(\theta)$
+and then writes a shifted form
+$P_0\sim\cos^2(\langle f\rangle_\rho-m\epsilon+\theta_{\mathrm{err}})$.
+The correction targets that contrast-to-phase inference. It does not deny the
+distinct nonlinear cloud-to-trajectory discrepancy discussed in source
+Section IV.
+
+\subsection{Sampling and observable regularity}
+Source Section V, p.~6, defines $f:\Omega\to[0,1]$ and uses
+$\theta=2\arccos\sqrt f$, yielding $P_0=\langle f\rangle_\rho$.
+The paragraph following source Eq.~(35) assigns the shot count
+$M=O(\Sigma/\epsilon^2)$ to estimating this probability. Appendix D.1 instead
+analyzes direct coordinate samples, while D.2 separately analyzes Bernoulli
+measurements. These measurement models have different variances.
+
+Immediately before source Eq.~(35), $f$ is assumed twice continuously
+differentiable near the mean and $\rho$ multivariate Gaussian. The displayed
+expansion is
+\[
+\int_\Omega f(\mathbf x)\rho(\mathbf x)\,d\mathbf x
+=f(\langle\mathbf x\rangle)
++\frac12\operatorname{Tr}\!\left(\Sigma D^2f(\langle\mathbf x\rangle)\right)
++O(\|\Sigma\|^2).
+\]
+The regularity counterexample concerns this remainder under the stated
+$C^2$ assumption. It does not challenge the polynomial identities for
+coordinate and squared-coordinate observables.
+
+\subsection{Ehrenfest--Reynolds calibration}
+On p.~5, source Eqs.~(22)--(25) define
+\begin{align*}
+L&=\sqrt d\max_i\sup_{\mathbf x\in\Omega}\|\nabla F_i(\mathbf x)\|_2,
+&H&=\sqrt d\max_i\sup_{\mathbf x\in\Omega}\|D^2F_i(\mathbf x)\|_F,\\
+\sigma_F^2&=\frac{\|\Sigma\|_F}{\sqrt d},
+&R&=\frac{\sqrt d\,\sigma_F H}{2L}.
+\end{align*}
+The source states $\sigma_F=\sigma$ for $\Sigma=\sigma^2I$.
+For its logarithmic Lotka--Volterra example, source Eq.~(45), p.~7, writes
+\[
+\frac R\sigma=\frac\gamma\beta=2.29.
+\]
+The numerical-calibration correction compares that display with the definitions
+above, rather than imposing a different definition of $R$.
+
+\subsection{Disclosed approximations and preserved conclusions}
+Source Section IV.B, p.~4, explicitly describes approximately Gaussian
+second-order closure and a constant covariance Frobenius norm. It acknowledges
+that covariance conservation is stronger than phase-space volume conservation.
+Section IV.C, p.~5, says the choice of about ten grid points used in its width
+criterion is an arbitrary order-of-magnitude estimate. These disclosures remain
+part of the scope of the source's claims. The present note does not treat them
+as newly discovered omissions. The valid distinction
+$\langle F(X)\rangle\ne F(\langle X\rangle)$ for nonlinear dynamics is retained.

@@ -1,0 +1,14 @@
+{
+  "study": "Geometric stability and observable inference in dual Koopman-von Neumann embeddings: Corrections and reproducible counterexamples",
+  "canonical_author": "Taylor Kalin",
+  "canonical_repository": "https://github.com/Teylersf/koopman-embedding-corrections",
+  "status": "preparing_verified_manuscript",
+  "review_sequence": "GitHub and AiraXiv preprint, Publish.fun review, then AgentPub and AAES after the Publish.fun review closes",
+  "platforms": {
+    "github": {"status": "not_yet_created"},
+    "airaxiv": {"status": "not_yet_submitted"},
+    "publishfun": {"status": "not_yet_submitted"},
+    "agentpub": {"status": "not_yet_submitted", "agent_byline": "Lattice Audit Agent", "human_operator": "Taylor Kalin"},
+    "aaes": {"status": "not_yet_submitted", "agent_byline": "Lattice Audit Agent", "human_operator": "Taylor Kalin"}
+  }
+}

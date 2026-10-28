@@ -1,0 +1,111 @@
+{
+  "canonical_author": "Taylor Kalin",
+  "pages": 15,
+  "code_pin": {
+    "code_commit": "b8f3100e8360510e956edc4b77b1ba61bf8d6094",
+    "script_sha256": "d31f8924db3cfd234806f615e82357c0c8e89b191041363676e62502a0056add",
+    "results_sha256": "17368c8586be78a587793e40914ed995f0c0f3cc0296b3b52e6fa5341e8286df"
+  },
+  "artifacts": [
+    {
+      "path": "paper/main.pdf",
+      "bytes": 181224,
+      "sha256": "77610e56727d02686c8f961d76c2144caa9d33f285658e66a2a0403942c3c6a0"
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 12981,
+      "sha256": "122d63565846d24cf5d25c347d2ca8576f1074da2b87235aaf7a8ebd955239ca"
+    },
+    {
+      "path": "paper/references.bib",
+      "bytes": 3358,
+      "sha256": "5dfa84e0ff68440baaf572718cb79a2038909e117be967bd06320d157c34d975"
+    },
+    {
+      "path": "experiments/verify.py",
+      "bytes": 16097,
+      "sha256": "d31f8924db3cfd234806f615e82357c0c8e89b191041363676e62502a0056add"
+    },
+    {
+      "path": "experiments/make_figures.py",
+      "bytes": 5286,
+      "sha256": "280657bf89f5d79dad79d536ec7f3c59f997b8e06cf1ad626d6237203c5435f4"
+    },
+    {
+      "path": "results/verification.json",
+      "bytes": 15137,
+      "sha256": "17368c8586be78a587793e40914ed995f0c0f3cc0296b3b52e6fa5341e8286df"
+    },
+    {
+      "path": "results/execution.log",
+      "bytes": 15891,
+      "sha256": "cb2a6dcfe40ed284f59cac80d802c316384f430fa13c559980bff78ee4fe0f8b"
+    },
+    {
+      "path": "submissions/manuscript.md",
+      "bytes": 43666,
+      "sha256": "05d9fbc4ed17662b0c868739aa0760153348cc408eddbb2241d19352c982dc79"
+    },
+    {
+      "path": "submissions/metadata.json",
+      "bytes": 2128,
+      "sha256": "5cdb6ac2d9d303c536511b39bfe3e6b8ff940f0973e4986a1a6f23cfffc121f8"
+    },
+    {
+      "path": "paper/sections/benchmarks.tex",
+      "bytes": 2492,
+      "sha256": "8b2cb0444708ad460e2854c35fc0573225eb5552cdbc996667d9c06e35fec9bf"
+    },
+    {
+      "path": "paper/sections/covariance.tex",
+      "bytes": 2516,
+      "sha256": "4661b7cdbe53b7dc6ebf6cdd15c060d1c6406b2343edbefde5c4f1f139963364"
+    },
+    {
+      "path": "paper/sections/execution.tex",
+      "bytes": 1932,
+      "sha256": "55dbfc674b9f06cd00972f87c657c9bdf0900439f1925bb58b165855f993615e"
+    },
+    {
+      "path": "paper/sections/geometry.tex",
+      "bytes": 6052,
+      "sha256": "a0ae9e846319c397cd901e9923d165dc258aa206cb8321889e441ee298f346f8"
+    },
+    {
+      "path": "paper/sections/readout.tex",
+      "bytes": 8239,
+      "sha256": "1e1c4d06495979167671278ea2f70a9406ac5afec188d355b75192b3663f00e3"
+    },
+    {
+      "path": "paper/sections/regularity.tex",
+      "bytes": 3829,
+      "sha256": "487b94a260747f33d60ed15c314a93efd2aba589adf80430df8bfe6893947e95"
+    },
+    {
+      "path": "paper/sections/source-evidence.tex",
+      "bytes": 5179,
+      "sha256": "20e8de445e9e7e606e74030fbd3e0877f37154760c08ca10932bedc5990990bf"
+    },
+    {
+      "path": "figures/geometry-criterion.pdf",
+      "bytes": 24057,
+      "sha256": "155fa5509e64da0b29a542d9ac299f86545e97be376c0b78df056da4ed4ac1dd"
+    },
+    {
+      "path": "figures/geometry-criterion.png",
+      "bytes": 64675,
+      "sha256": "b9b18c27f4cbc629c33bcdd3c824570285232445b4187d05c9fd9a79ea3cabf0"
+    },
+    {
+      "path": "figures/phase-inference.pdf",
+      "bytes": 26843,
+      "sha256": "8768ca17cb1cd7d9ff490d984f2173b82045c101f60e04ffafb9d90988995d70"
+    },
+    {
+      "path": "figures/phase-inference.png",
+      "bytes": 143765,
+      "sha256": "9763378fd65c096e780fb5d8070efd4c3362a924ff5f2572bb7d72e95e8793bc"
+    }
+  ]
+}

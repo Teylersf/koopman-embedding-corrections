@@ -1,0 +1,243 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,longtable}
+\usepackage{graphicx,enumitem,fancyvrb}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\setlist{nosep}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\E}[1]{\mathbb E\!\left[#1\right]}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\mathrm d}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\tr}{tr}
+\title{Geometric stability and observable inference in dual Koopman--von Neumann embeddings:\\Corrections and reproducible counterexamples}
+\author{Taylor Kalin\\
+\small\href{https://taylorkalin.com}{taylorkalin.com}\\
+\small\href{https://orcid.org/0009-0003-9000-9315}{ORCID: 0009-0003-9000-9315}\\
+\small\href{mailto:teylersf@gmail.com}{teylersf@gmail.com}\quad
+\href{tel:+15099190487}{509-919-0487}}
+\date{28 October 2026}
+\hypersetup{pdfauthor={Taylor Kalin},pdftitle={Geometric stability and observable inference in dual Koopman-von Neumann embeddings: Corrections and reproducible counterexamples}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We examine version 2 of arXiv:2609.28999, which reconstructs conservative
+nonlinear ordinary differential equations from means of transported
+probability densities. The printed geometric-distortion definition retains
+the initial separation between neighboring states while its Taylor expansion
+omits that separation. For the stated directional transport maps, the resulting
+normalized quantity is at least one, so it cannot satisfy the proposed
+small-distortion criterion as written. We give a corrected displacement
+definition and a local derivative estimate, without asserting a universal
+replacement stability threshold. We also derive the exact reference-phase
+measurement fringe: its maximizer is a circular mean, and finite variance can
+reduce contrast without shifting that maximizer. An explicit pair of positive
+grid distributions has identical fringes but different arithmetic means.
+Further corrections distinguish Bernoulli-ancilla sampling from direct
+coordinate sampling, reconcile the Lotka--Volterra benchmark parameter with
+the source definitions, and exhibit a twice continuously differentiable
+observable for which a stated fourth-order Gaussian remainder fails.
+All numerical examples are deterministic classical computations with analytic
+checks and a recorded execution log. These results repair specific geometric,
+inference, and regularity statements; they do not refute Koopman embeddings,
+the genuine nonlinear mean-trajectory discrepancy, or all covariance-based
+error estimates.
+\end{abstract}
+
+\section{Introduction and scope}
+\label{sec:introduction}
+Linear evolution in an enlarged representation can describe nonlinear
+classical dynamics. A distinct question is how accurately a finite-width
+distribution encodes a trajectory with one specified initial condition.
+Fredon, Ram, Debbasch, Zylberman, and Loureiro~\cite{original} study this
+question using dual Koopman--von Neumann embeddings, transport, and quantum
+readout. Their analysis correctly identifies the distinction between
+$\E{F(X)}$ and $F(\E{X})$ for nonlinear $F$.
+
+The present note concerns statements that can be checked independently of a
+large-scale quantum implementation. Its main contributions are: (i) an exact
+initial-separation obstruction to the geometric criterion printed in source
+Eqs.~(30)--(31); (ii) an exact characterization and nonidentifiability example
+for the proposed reference-phase readout; and (iii) reproducible corrections
+to sampling prefactors, a benchmark calibration, and regularity assumptions.
+Each correction is local to the statement identified. Standard ingredients
+such as Taylor's theorem, characteristic functions, and quantum amplitude
+estimation are credited rather than presented as new general theory.
+
+The audited PDF identifies itself as arXiv:2609.28999v2. The supplied local
+file was compared byte-for-byte with the versioned public PDF: 959,353 bytes,
+SHA-256:
+\begin{quote}\small\ttfamily
+f895d195c935bcc9e3d0b14d2499f59aa497b8fcdce7d69f13fbc74d10301add
+\end{quote}
+The checked arXiv record lists v2, revised 25 September 2026; no later
+version or journal reference was listed when checked on 28 October 2026.
+No claim is made about an unexamined subsequent revision.
+Appendix~\ref{app:source-evidence} records the targeted source passages.
+
+\section{Related work and the valid reconstruction problem}
+\label{sec:related}
+The Koopman representation and its use in quantum simulation have an extensive
+history; Joseph~\cite{joseph} develops a KvN route for nonlinear classical
+dynamics. The transport implementation invoked by the source is the related
+Trotter-based algorithm of Zylberman et al.~\cite{transport}. We do not
+re-audit that algorithm's complete spatial, time-step, or gate complexity.
+
+For a normalized transported density $\rho$, write $m=\E{X}$ and
+$\dot x_*=F(x_*)$. Under the boundary conditions needed for integration by
+parts, the exact first-moment identity is
+\begin{equation}
+ \dot m=\E{F(X)},\qquad
+ \dot m-F(m)=\E{F(X)}-F(m).
+ \label{eq:mean-identity}
+\end{equation}
+The last term can be nonzero with perfect transport and perfect estimation
+of the actual mean. This cloud-to-trajectory discrepancy is separate from
+any readout error. The source's Lipschitz estimate, its Eq.~(15), is consistent
+with this identity. Its approximately Gaussian, second-order closure and
+constant covariance-norm approximation are explicitly disclosed assumptions,
+not newly discovered omissions. We do not treat phase-volume conservation
+as covariance conservation.
+
+Amplitude estimation estimates a probability encoded by a specified circuit.
+The established coherent-query bounds of Brassard et al.~\cite{bhmt} and
+Aaronson and Rall~\cite{aaronsonrall}, and observable-estimation methods of
+Rall~\cite{rall,rallcoherent} and Montanaro~\cite{montanaro}, distinguish query
+accuracy from the cost of preparing and inverting the required operations.
+Our counterexamples to a particular phase-inference argument do not contradict
+these algorithms or their accuracy guarantees. They identify which quantity
+the source circuit actually encodes and which assumptions are needed to infer
+a different quantity from it.
+
+\input{sections/geometry}
+\input{sections/readout}
+\input{sections/benchmarks}
+\input{sections/regularity}
+
+\section{Reproducible experiments}
+\label{sec:experiments}
+The companion implementation uses explicit analytic fields, finite probability
+vectors, and fixed matrices; it requires no external dataset, original-paper
+PDF, quantum processor, or proprietary software. The numerical results are
+classical corroboration of the displayed algebra, not independent human peer
+review or evidence of a quantum speedup. The execution environment, exact
+commands, source hashes, result hashes, and assertions are recorded in the
+repository. Appendix~\ref{sec:execution} provides an inspectable execution
+summary and the main reported values.
+
+The geometric experiment evaluates the source definition and the repaired
+displacement definition on the same nonlinear shear. Readout experiments use
+actual finite-grid probability vectors: symmetric Gaussian samples and a
+positive four-node pair. The checks compare the complete reference-phase
+fringes rather than estimating a maximum from noisy measurements. Further
+checks compare the two sampling variances, reproduce the benchmark ratio,
+and demonstrate the regularity counterexample by Gaussian quadrature.
+The covariance appendix checks exact finite-matrix identities. A small
+rounding tolerance is used only for floating-point evaluation; the main
+counterexamples also have analytic proofs.
+
+\input{results-table}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=.94\linewidth]{../figures/geometry-criterion.pdf}
+\caption{The source geometric quantity retains the initial separation, whereas
+the repaired displacement difference vanishes with the time step. Both are
+evaluated for the same nonlinear Hamiltonian shear. This comparison addresses
+the printed definition; it is not a validation of a universal corrected
+stability threshold.}
+\label{fig:geometry}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=.94\linewidth]{../figures/phase-inference.pdf}
+\caption{Finite width changes the contrast of a symmetric packet's exact
+reference-phase fringe without shifting its maximizing reference. The
+finite-grid calculations include positive-variance packets. The distinct
+four-node nonidentifiability example is given in the text and numerical log.}
+\label{fig:phase}
+\end{figure}
+
+\section{Discussion and limitations}
+\label{sec:limitations}
+The geometric error is an algebraic inconsistency between a definition and its
+expansion. Subtracting the initial separation repairs that inconsistency, but
+does not by itself establish that any chosen smallness threshold guarantees
+long-time trajectory accuracy. A useful theorem must specify the map, local
+derivative bounds, packet support, quadrature, time horizon, and reconstruction
+error to be controlled.
+
+The readout correction likewise separates tasks. A fixed-frequency fringe
+does not determine an arbitrary arithmetic mean. Symmetry can eliminate the
+phase bias, while nonsymmetric packets can introduce one. These facts neither
+remove the nonlinear discrepancy in Eq.~\eqref{eq:mean-identity} nor impose a
+universal covariance floor on estimating an encoded expectation. The
+appropriate accuracy and resource statements depend on the chosen circuit
+and statistical experiment.
+
+The benchmark calibration correction does not show that the Lotka--Volterra
+simulation fails: both the printed and corrected initial parameters are small
+in that example. The covariance proof repairs are not a refutation of every
+main-text bound. Gaussian closure may be useful over restricted time windows;
+its practical accuracy requires checks beyond the counterexamples here.
+No exhaustive error inventory, end-to-end quantum advantage, new general
+moment-closure theory, or universal impossibility theorem is claimed.
+
+\section{Conclusion}
+The geometric criterion printed in arXiv:2609.28999v2 retains an initial
+separation that its expansion omits. The exact directional-map calculation
+makes the normalized quantity at least one. The proposed phase inference
+also conflates fringe contrast with phase displacement; its output is a
+circular mean, and fixed-frequency fringe data need not identify an arithmetic
+mean. Correcting these statements requires explicit definitions and inference
+assumptions. The accompanying examples and proofs supply reproducible repairs
+while preserving the valid distinction between transported-density means and
+individual nonlinear trajectories.
+
+\section*{Author and methods disclosure}
+Taylor Kalin is the human author and is responsible for this submission.
+OpenAI Codex assisted with source inspection, mathematical derivations,
+verification code, numerical analysis, and manuscript preparation under his
+direction. Separate AI-agent checks were used during preparation; they are
+not represented as independent human expert review. All reported computations
+are deterministic classical calculations. No quantum-hardware experiment is
+claimed. This disclosure describes methods separately from the author byline.
+
+\paragraph{Funding and competing interests.}
+Computational work used locally available computing resources and AI tools.
+No external funding or competing interests were reported for this study.
+
+\section*{Prior dissemination and parallel-submission disclosure}
+This is one correction study. Its public GitHub repository is
+\url{https://github.com/Teylersf/koopman-embedding-corrections}.
+AiraXiv is an intended preprint deposit. AgentPub and AAES versions are
+planned after the Publish.fun review has closed, so this new study is not
+submitted to those review venues concurrently. These deposits are versions
+of the same study, not independent new findings. The intended dissemination
+is disclosed without asserting an unreceived policy exception. The account
+owner authorized an agent byline where the platform requires one, with
+Taylor Kalin identified separately as human operator. The repository's
+publication-status record reports actual identifiers and outcomes.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\appendix
+\input{sections/source-evidence}
+\input{sections/covariance}
+\input{sections/execution}
+\end{document}

@@ -1,0 +1,21 @@
+\begin{table}[tbp]
+\centering\small
+\begin{tabular}{p{.46\linewidth}rr}
+\toprule
+Check & Numerical value & Analytic comparison\\
+\midrule
+Raw geometric ratio, $h=10^{-3}$ & 1.0000098691 & $\geq1$\\
+Increment ratio, same map & 0.0044399602 & $0.0044399602$\\
+Maximum symmetric-packet phase bias & $1.67\times10^{-16}$ & $0$\\
+Same-fringe arithmetic-mean gap & $0.0001965922$ & $4\eta(ac-b)$\\
+Lotka--Volterra $R/\sigma$ & 0.7071067812 & $1/\sqrt2$\\
+$C^2$ cubic-moment coefficient & 1.5957691216 & $2\sqrt{2/\pi}$\\
+Dense covariance norm, $t=0.1$ & 1.5068242214 & appendix bound 1.3403624549\\
+\bottomrule
+\end{tabular}
+\caption{Selected deterministic checks. Phase error is floating-point rounding.
+The covariance row concerns the appendix's smaller constant; the larger
+main-text constant repairs that example. Full inputs and results are recorded
+in the checked JSON and execution log.}
+\label{tab:checks}
+\end{table}

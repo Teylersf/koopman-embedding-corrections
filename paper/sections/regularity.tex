@@ -1,0 +1,92 @@
+\section{Regularity required by the Gaussian remainder}
+\label{sec:regularity}
+
+Source Eq.~(35), p.~6, assumes a Gaussian packet and an
+observable $f$ twice continuously differentiable near its mean, but
+assigns the expansion a remainder $O(\norm{\Sigma}^2)$:
+\begin{equation}
+ \E{f(X)}=f(\mu)+\frac12\operatorname{tr}
+              (\Sigma D^2f(\mu))+O(\norm{\Sigma}^2).
+ \label{eq:source-observable-remainder}
+\end{equation}
+The stated differentiability does not imply that order, even for an
+ideal Gaussian.
+
+\begin{proposition}[A $C^2$ counterexample]
+\label{prop:c2-remainder}
+Set $\mu=1/2$ and $f(x)=|x-\mu|^3$ on $[0,1]$.
+This observable is $C^2$, satisfies $0\leq f\leq1/8$, and has
+$f(\mu)=f'(\mu)=f''(\mu)=0$. For a Gaussian of width $\sigma$ centered
+at $\mu$, its expectation has leading order $\sigma^3$, rather than
+$O(\sigma^4)$.
+\end{proposition}
+
+\begin{proof}
+For an untruncated standard normal $Z$,
+\begin{equation}
+ \E{|\sigma Z|^3}=2\sqrt{\frac2\pi}\,\sigma^3.
+ \label{eq:absolute-third-moment}
+\end{equation}
+The observable may be extended to a bounded $C^2$ function on $\R$
+by a smooth cutoff that is one near $\mu$; this changes the displayed
+expectation only by exponentially small terms as $\sigma\to0$.
+Alternatively, normalize the Gaussian on $[0,1]$ itself. Its mean remains
+$\mu$, its variance $\tau_\sigma^2$ satisfies
+$\tau_\sigma^2\sim\sigma^2$, and the expectation in
+\eqref{eq:absolute-third-moment} has only exponentially small changes.
+Consequently
+\begin{equation}
+ \frac{\E{f(X)}}{\tau_\sigma^4}
+ \sim 2\sqrt{\frac2\pi}\,\frac1\sigma\longrightarrow\infty.
+ \label{eq:c2-ratio}
+\end{equation}
+The purported second-order covariance remainder is therefore not a
+consequence of the stated $C^2$ hypothesis.
+\end{proof}
+
+The untruncated calculation is an exact Gaussian test; the compact
+version addresses the localized packets used on a bounded computational
+domain. Source Appendix~D.1 itself extends a narrow Gaussian integral
+to the real axis. The exponentially small boundary correction cannot
+repair the algebraic order in \eqref{eq:c2-ratio}.
+
+A standard sufficient stronger hypothesis makes the intended order
+precise. Here the operator norm of a fourth derivative means the norm
+of its associated four-linear form.
+
+\begin{proposition}[A sufficient fourth-derivative bound]
+\label{prop:c4-remainder}
+Let $X=\mu+Y$ with $Y\sim N(0,\Sigma)$ in fixed dimension $d$.
+Suppose $f\in C^4(\R^d)$ and
+$\sup_y\norm{D^4f(y)}_{\rm op}\leq M_4$. Then
+\begin{align}
+ \left|\E{f(X)}-f(\mu)-\frac12\operatorname{tr}
+                         (\Sigma D^2f(\mu))\right|
+ &\leq\frac{M_4}{24}
+       \left[(\operatorname{tr}\Sigma)^2+
+                         2\operatorname{tr}(\Sigma^2)\right]
+       \label{eq:c4-remainder}\\
+ &\leq\frac{M_4(d+2)}{24}\norm{\Sigma}_F^2.
+       \nonumber
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Taylor expansion through cubic order has pointwise remainder bounded
+by $M_4\norm{Y}_2^4/24$. Centered Gaussian odd moments vanish, and
+$\E{Y^\top D^2f(\mu)Y}=\operatorname{tr}(\Sigma D^2f(\mu))$.
+The Gaussian fourth-moment identity is
+$\E{\norm{Y}_2^4}=(\operatorname{tr}\Sigma)^2+
+2\operatorname{tr}(\Sigma^2)$. Finally,
+$(\operatorname{tr}\Sigma)^2\leq d\norm{\Sigma}_F^2$.
+\end{proof}
+
+Local $C^4$ hypotheses can be used with an explicit tail estimate and
+control outside the local neighborhood; they cannot silently replace
+the global bound in this proposition. This is a standard Taylor and
+Gaussian-moment estimate, included to supply a repair rather than a
+novel general approximation theorem. For the particular coordinate
+observables $f=x_i$ and $f=x_ix_j$, the relevant moment identities are
+exact for every distribution with the required moments. The regularity
+counterexample therefore does not invalidate direct measurement of
+means and covariance entries.

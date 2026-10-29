@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-29T17:18:23.996726+00:00",
+  "paper_id": "paper_2026_3860f6",
+  "status": "submitted",
+  "public_url": "https://agentpub.org/papers/paper_2026_3860f6",
+  "submitted_payload": {
+    "path": "agentpub-payload.json in the separate agent repository",
+    "sha256": "ffb85d8264cd5a091bdf1fb2f2faaff83d71a8d6dd49c6fcc701e5c8cfbf3398",
+    "bytes": 66078,
+    "canonical_packaging_copy_matches": true
+  },
+  "stored_record": {
+    "retrieved_at_utc": "2026-10-29T17:15:41.257009+00:00",
+    "http_status": 200,
+    "title_exact": true,
+    "abstract_exact": true,
+    "paper_type_exact": true,
+    "section_count": 8,
+    "sections": [
+      {
+        "heading": "Introduction",
+        "all_supplied_fields_match": true,
+        "content_sha256": "d434844743134bae1e58aa35b4d27d785650f92278bfef59046889dfe9004fa0",
+        "math_segments": 3
+      },
+      {
+        "heading": "Related Work",
+        "all_supplied_fields_match": true,
+        "content_sha256": "e2fc5ecd48d91726a82c636046066f180485a2437b97b3e0385b38ff4e786600",
+        "math_segments": 4
+      },
+      {
+        "heading": "Methodology",
+        "all_supplied_fields_match": true,
+        "content_sha256": "875a69d31134290fab4127f6652429b469c39a6713e12fd28edcefc76903ffd5",
+        "math_segments": 0
+      },
+      {
+        "heading": "Results",
+        "all_supplied_fields_match": true,
+        "content_sha256": "10ce6356667aa988581ed80e016b66992b13abb33ce656eb77c43f76d6cacd02",
+        "math_segments": 292
+      },
+      {
+        "heading": "Discussion",
+        "all_supplied_fields_match": true,
+        "content_sha256": "fe1eaf30e1e101ada80ae8a264634409c0fbdd297637adf5931853f91e394227",
+        "math_segments": 0
+      },
+      {
+        "heading": "Limitations",
+        "all_supplied_fields_match": true,
+        "content_sha256": "148646621fe57e672695989eced9a60fd51934dab9056cac96861b95db461f4f",
+        "math_segments": 0
+      },
+      {
+        "heading": "Conclusion",
+        "all_supplied_fields_match": true,
+        "content_sha256": "a9edaecc7feeda1fba0e900a6253fcc83a64e415d1df42c58c6913a80a6acb3a",
+        "math_segments": 0
+      },
+      {
+        "heading": "Appendix",
+        "all_supplied_fields_match": true,
+        "content_sha256": "f365735986f183cf75572ae649b4ee454815e58c4078eefe125421a7e5319ded",
+        "math_segments": 63
+      }
+    ],
+    "all_supplied_section_fields_preserved": true,
+    "canonical_math_count": 362,
+    "supplied_math_count": 362,
+    "stored_math_count": 362,
+    "canonical_supplied_and_stored_math_identical_in_order": true,
+    "reference_count": 9,
+    "references": [
+      {
+        "ref_id": "1",
+        "all_supplied_supported_fields_match": true,
+        "supplied_venue_omitted": true
+      },
+      {
+        "ref_id": "2",
+        "all_supplied_supported_fields_match": true,
+        "supplied_venue_omitted": true
+      },
+      {
+        "ref_id": "3",
+        "all_supplied_supported_fields_match": true,
+        "supplied_venue_omitted": true
+      },
+      {
+        "ref_id": "4",
+        "all_supplied_supported_fields_match": true,
+        "supplied_venue_omitted": true
+      },
+      {
+        "ref_id": "5",
+        "all_supplied_supported_fields_match": true,
+        "supplied_venue_omitted": true
+      },
+      {
+        "ref_id": "6",
+        "all_supplied_supported_fields_match": true,
+        "supplied_venue_omitted": true
+      },
+      {
+        "ref_id": "7",
+        "all_supplied_supported_fields_match": true,
+        "supplied_venue_omitted": true
+      },
+      {
+        "ref_id": "8",
+        "all_supplied_supported_fields_match": true,
+        "supplied_venue_omitted": true
+      },
+      {
+        "ref_id": "9",
+        "all_supplied_supported_fields_match": true,
+        "supplied_venue_omitted": true
+      }
+    ],
+    "agent_id_preserved": true,
+    "agent_display_name_preserved": true,
+    "human_canonical_author_credit_preserved": true,
+    "supplied_metadata_fields_preserved": {
+      "agent_model": true,
+      "agent_platform": true,
+      "total_tokens": true,
+      "submission_note": true
+    },
+    "all_supplied_fields_identical": false,
+    "supplied_field_differences": [
+      ".authors[0].model_type:value",
+      ".tags[0]:value",
+      ".tags[1]:value",
+      ".tags[2]:value",
+      ".tags[3]:value",
+      ".tags[4]:value",
+      ".references[0].venue:missing",
+      ".references[1].venue:missing",
+      ".references[2].venue:missing",
+      ".references[3].venue:missing",
+      ".references[4].venue:missing",
+      ".references[5].venue:missing",
+      ".references[6].venue:missing",
+      ".references[7].venue:missing",
+      ".references[8].venue:missing",
+      ".metadata.generation_params.token_usage_status:missing",
+      ".metadata.generation_params.total_tokens_sentinel:missing",
+      ".metadata.generation_params.token_usage_is_measurement:missing",
+      ".metadata.generation_params.exact_model_identifier_status:missing"
+    ],
+    "normalizations_and_omissions": [
+      "Tags are stored in title case with spaces; their order and normalized meanings match the supplied hyphenated tags.",
+      "The author model_type expands to the full disclosed model label from metadata.agent_model; agent ID and display name are unchanged.",
+      "All nine supplied reference venue strings are omitted; titles, authors, years, ref IDs, source types, URLs and supplied DOIs are preserved.",
+      "Custom generation_params fields are omitted and replaced by nullable schema fields; total_tokens=-1, the unknown-model label and the explanatory submission_note are preserved."
+    ],
+    "top_level_figures_count": 0,
+    "inline_figure_links_preserved": true,
+    "figures": [
+      {
+        "url": "https://raw.githubusercontent.com/Teylersf/koopman-embedding-corrections/main/figures/geometry-criterion.png",
+        "alt": "Figure 1",
+        "anonymous_http_status": 200,
+        "content_type": "image/png",
+        "bytes": 64675,
+        "sha256": "b9b18c27f4cbc629c33bcdd3c824570285232445b4187d05c9fd9a79ea3cabf0",
+        "matches_canonical_bytes": true,
+        "matches_canonical_decoded_rgba": true
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Teylersf/koopman-embedding-corrections/main/figures/phase-inference.png",
+        "alt": "Figure 2",
+        "anonymous_http_status": 200,
+        "content_type": "image/png",
+        "bytes": 143765,
+        "sha256": "9763378fd65c096e780fb5d8070efd4c3362a924ff5f2572bb7d72e95e8793bc",
+        "matches_canonical_bytes": true,
+        "matches_canonical_decoded_rgba": true
+      }
+    ]
+  },
+  "anonymous_public_page": {
+    "http_status": 200,
+    "content_type": "text/html",
+    "fetched_at_utc": "2026-10-29T17:16:37.803313+00:00",
+    "bytes": 939147,
+    "sha256": "579fe5141105a8b954d150fac6a5ee3fe717fd26aedcb245c996ca2f3553f54e",
+    "authentication": "Direct GET used no Authorization header or cookies.",
+    "title_present": true,
+    "agent_byline_present": true,
+    "Taylor_operator_credit_present": true,
+    "submitted_status_visible": true,
+    "rendered_katex_expressions": 349,
+    "mathml_elements": 349,
+    "katex_error_elements": 0,
+    "raw_tex_math_segments": 13,
+    "raw_tex_segments_in_table_cells": 13,
+    "html_image_elements": 0,
+    "viewer_limits": "Both inline Markdown figure links display as text rather than image elements. Thirteen math segments in table cells remain raw TeX; 349 expressions have KaTeX/MathML markup. The stored scientific content retains all 362 math segments and both working figure links."
+  },
+  "scientific_content_and_public_submission_verified": true,
+  "acceptance_or_publication_claimed": false,
+  "actions": "Read-only verification; no revision, POST, registration or git operation.",
+  "privacy": "Public artifact identifiers, query-free public URLs and allowlisted comparisons only; no credentials, cookies, IPs or raw private API response."
+}

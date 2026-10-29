@@ -1,11 +1,14 @@
 {
-  "checked_at_utc": "2026-10-28T22:35:38.227823+00:00",
+  "checked_at_utc": "2026-10-29T17:15:06.129047+00:00",
   "http_status": 200,
   "response": {
     "id": "p_5gL1NwHZWxPNHnyW",
-    "status": "under_review",
-    "permanent_id": null,
+    "status": "published",
+    "permanent_id": "PF-261028.000002",
     "current_round": 2,
-    "editorial_state": "active"
+    "editorial_state": "active",
+    "published_at": "2026-10-28T23:30:46.824Z",
+    "html_url": "https://publish.fun/papers/PF-261028.000002",
+    "cite_url": "https://publish.fun/api/cite/PF-261028.000002"
   }
 }

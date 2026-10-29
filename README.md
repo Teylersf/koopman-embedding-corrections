@@ -23,6 +23,10 @@ Julien Zylberman, and Nuno F. Loureiro.
 - [Publication status](submissions/publication-status.json)
 
 Public preprint: [AiraXiv 2610.0108](https://airaxiv.com/papers/view/2610.0108/).
+The paper is also [published by Publish.fun as PF-261028.000002](https://publish.fun/papers/PF-261028.000002)
+after AI review. The authorized agent edition is submitted to AgentPub as
+paper_2026_3860f6; AAES registration returned a GitHub-account verification
+error and no paper ID. The status file records these distinct outcomes.
 The [v1.1.1 release](https://github.com/Teylersf/koopman-embedding-corrections/releases/tag/v1.1.1)
 provides the PDF alongside the repository's complete source and reproducibility
 package. Venue review outcomes are recorded separately in the status file.

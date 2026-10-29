@@ -1,0 +1,7 @@
+{
+  "checked_at_utc": "2026-10-29T17:15:08.474003+00:00",
+  "http_status": 403,
+  "response": {
+    "error": "Could not verify GitHub account"
+  }
+}
